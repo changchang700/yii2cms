@@ -1,0 +1,42 @@
+{
+	"name": "cebe/markdown-latex",
+	"description": "A super fast, highly extensible markdown parser for PHP, that converts markdown files into latex",
+	"keywords": ["markdown", "gfm", "markdown-extra", "fast", "extensible", "latex"],
+	"homepage": "https://github.com/cebe/markdown-latex#readme",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Carsten Brandt",
+			"email": "mail@cebe.cc",
+			"homepage": "http://cebe.cc/",
+			"role": "Creator"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/cebe/markdown-latex/issues",
+		"source": "https://github.com/cebe/markdown-latex"
+	},
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.4.0",
+		"cebe/markdown": "~1.0.0",
+		"mikevanriel/text-to-latex": "~1.0.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "3.7.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"cebe\\markdown\\latex\\": ""
+		}
+	},
+	"bin": [
+		"bin/markdown-latex"
+	],
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
+}

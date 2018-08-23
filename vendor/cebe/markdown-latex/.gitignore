@@ -1,0 +1,10 @@
+/composer.lock
+/vendor
+
+# LaTeX
+
+*.aux
+*.log
+*.out
+README.tex
+main.pdf

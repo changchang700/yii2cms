@@ -102,7 +102,7 @@ return [
         'allowActions' => [
             'rbac/user/request-password-reset',
             'rbac/user/reset-password',
-			'*'
+//			'*'
         ]
     ],
     'params' => $params,

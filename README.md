@@ -9,7 +9,8 @@
 > * 系统访问日志
 > * 待开发功能........
 
-[点击查看演示][1]
+[查看演示站点-账号：demo 密码：123456][1]
+
 系统目录结构如下
 DIRECTORY STRUCTURE
 -------------------
@@ -87,7 +88,7 @@ yii2_cms.sql            数据库文件
 ![此处输入图片的描述][7]
 
 
-  [1]: https://resources.alilinet.com/20180824/201808240958273230.png
+  [1]: http://154.8.140.81/
   [2]: https://resources.alilinet.com/20180824/201808240951316663.png
   [3]: https://resources.alilinet.com/20180824/201808240953476842.png
   [4]: https://resources.alilinet.com/20180824/201808240958273230.png

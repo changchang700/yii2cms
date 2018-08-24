@@ -1,5 +1,4 @@
 <?php
-
 $config = [
     'components' => [
         'request' => [

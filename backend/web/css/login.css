@@ -5,3 +5,4 @@ body{overflow:hidden;}
 .form_code{ position:relative; }
 .form_code .code{ position:absolute; right:0; top:1px; cursor:pointer; }
 .login_btn{ width:100%; }
+.login_error_msg{color: red;}

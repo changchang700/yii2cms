@@ -14,13 +14,13 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
-        "rbac" => [        
+        "rbac" => [
             'class' => 'rbac\Module',
         ],
-        "system" => [        
+        "system" => [
             'class' => 'system\Module',
         ],
-        "backup" => [        
+        "backup" => [
             'class' => 'backup\Module',
         ],
     ],
@@ -102,7 +102,7 @@ return [
         'allowActions' => [
             'rbac/user/request-password-reset',
             'rbac/user/reset-password',
-//			'*'
+			'*'
         ]
     ],
     'params' => $params,

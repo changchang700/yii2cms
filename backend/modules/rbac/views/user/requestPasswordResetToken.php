@@ -24,7 +24,7 @@ $fieldOptions1 = [
         <?= $form
             ->field($model, 'email', $fieldOptions1)
             ->label(false)
-            ->textInput(['class' => 'layui-input','placeholder' => $model->getAttributeLabel('email')]) ?>
+            ->textInput(['class' => 'layui-input','lay-verify'=>'required','placeholder' => $model->getAttributeLabel('email')]) ?>
 
         <div class="layui-form-item">
 			<?= Html::submitButton('发送邮件', ['class' => 'layui-btn login_btn', 'name' => 'login-button']) ?>

@@ -866,3 +866,2080 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1535102891.079
     'REQUEST_TIME' => 1535102891
 ]
+2018-08-24 17:29:46 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:29:45 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '61943'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535102985.754
+    'REQUEST_TIME' => 1535102985
+]
+2018-08-24 17:30:29 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:30:28 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '61967'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103028.363
+    'REQUEST_TIME' => 1535103028
+]
+2018-08-24 17:30:35 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:30:34 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '61970'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103034.401
+    'REQUEST_TIME' => 1535103034
+]
+2018-08-24 17:30:41 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:30:40 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '61975'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103040.518
+    'REQUEST_TIME' => 1535103040
+]
+2018-08-24 17:31:43 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:31:42 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62008'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103102.808
+    'REQUEST_TIME' => 1535103102
+]
+2018-08-24 17:31:50 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:31:49 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62020'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103109.255
+    'REQUEST_TIME' => 1535103109
+]
+2018-08-24 17:34:13 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:34:12 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62081'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103252.427
+    'REQUEST_TIME' => 1535103252
+]
+2018-08-24 17:34:36 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:34:35 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62096'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103275.057
+    'REQUEST_TIME' => 1535103275
+]
+2018-08-24 17:35:04 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:35:02 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62117'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103302.946
+    'REQUEST_TIME' => 1535103302
+]
+2018-08-24 17:35:06 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:35:05 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62121'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103305.599
+    'REQUEST_TIME' => 1535103305
+]
+2018-08-24 17:35:12 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:35:11 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62126'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103311.288
+    'REQUEST_TIME' => 1535103311
+]
+2018-08-24 17:38:32 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:38:31 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62278'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103511.902
+    'REQUEST_TIME' => 1535103511
+]
+2018-08-24 17:38:35 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:38:33 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62281'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103513.92
+    'REQUEST_TIME' => 1535103513
+]
+2018-08-24 17:38:46 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:687
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#6 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#8 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#13 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#15 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#17 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#18 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#19 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#20 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#21 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#22 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#24 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#26 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#27 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#28 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#29 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#30 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#32 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#33 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#34 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#36 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#38 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#39 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#40 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#41 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\mygithub\vendor\yiisoft\yii2\db\Connection.php:624
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(996): yii\db\Connection->open()
+#1 D:\mygithub\vendor\yiisoft\yii2\db\Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(1143): yii\db\Command->prepare('<span class="ke...')
+#4 D:\mygithub\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(312): yii\db\Command->queryAll()
+#6 D:\mygithub\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(744): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 D:\mygithub\vendor\yiisoft\yii2\db\Schema.php(194): yii\db\Schema->getTableMetadata('<span class="st...', '<span class="st...', '<span class="ke...')
+#9 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(384): yii\db\Schema->getTableSchema('<span class="st...')
+#10 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(211): yii\db\ActiveRecord::getTableSchema()
+#11 D:\mygithub\vendor\yiisoft\yii2\db\ActiveRecord.php(190): yii\db\ActiveRecord::filterCondition('[<span class="s...')
+#12 D:\mygithub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('[<span class="s...')
+#13 D:\mygithub\backend\modules\rbac\models\User.php(90): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#14 D:\mygithub\vendor\yiisoft\yii2\web\User.php(690): rbac\models\User::findIdentity('<span class="nu...')
+#15 D:\mygithub\vendor\yiisoft\yii2\web\User.php(192): yii\web\User->renewAuthStatus()
+#16 D:\mygithub\vendor\yiisoft\yii2\web\User.php(360): yii\web\User->getIdentity()
+#17 D:\mygithub\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#18 D:\mygithub\vendor\yiisoft\yii2-debug\panels\UserPanel.php(81): yii\base\Component->__get('<span class="st...')
+#19 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#20 [internal function]: yii\base\BaseObject->__construct('[<span class="s...')
+#21 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(383): ReflectionClass->newInstanceArgs('[[<span class="...')
+#22 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#23 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#24 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(177): yii\BaseYii::createObject('[<span class="s...')
+#25 D:\mygithub\vendor\yiisoft\yii2-debug\Module.php(149): yii\debug\Module->initPanels()
+#26 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#27 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(158): yii\base\BaseObject->__construct('[]')
+#28 [internal function]: yii\base\Module->__construct('<span class="st...', Object(yii\web\Application), '[]')
+#29 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs('[<span class="s...')
+#30 D:\mygithub\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('<span class="st...', '[<span class="s...', '[]')
+#31 D:\mygithub\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('<span class="st...', '[<span class="s...', '[]')
+#32 D:\mygithub\vendor\yiisoft\yii2\base\Module.php(427): yii\BaseYii::createObject('[<span class="s...', '[<span class="s...')
+#33 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(315): yii\base\Module->getModule('<span class="st...')
+#34 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#35 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(273): yii\web\Application->bootstrap()
+#36 D:\mygithub\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#37 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(206): yii\base\BaseObject->__construct('[<span class="s...')
+#38 D:\mygithub\backend\web\index.php(17): yii\base\Application->__construct('[<span class="s...')
+#39 {main}
+Additional Information:
+
+2018-08-24 17:38:45 [127.0.0.1][-][is5shjdo2enaokt6rm8bvhbk34][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'is5shjdo2enaokt6rm8bvhbk34'
+    '_identity-backend' => '3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=is5shjdo2enaokt6rm8bvhbk34; _identity-backend=3ea94a7c8218e457e3e350049a0a1455cd219ea28f416a14974db74e1e0c526da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=c33ffdc21605bdde7d9108e1173d2fc91024222cc1f911d5173ca35ffd02e6dda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wTqxkshXR2JgQxYvSOWltEK8xVOuZgjc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '62293'
+    'REDIRECT_URL' => '/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/gii'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1535103525.666
+    'REQUEST_TIME' => 1535103525
+]

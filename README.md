@@ -9,6 +9,8 @@
 > * 系统访问日志
 > * 待开发功能........
 
+[加入QQ群一起讨论599071415][8]
+
 [查看演示站点-账号：demo 密码：123456][1]
 
 系统目录结构如下
@@ -95,3 +97,4 @@ yii2_cms.sql            数据库文件
   [5]: https://resources.alilinet.com/20180824/201808240958395263.png
   [6]: https://resources.alilinet.com/20180824/201808240958346071.png
   [7]: https://resources.alilinet.com/20180824/201808240958442149.png
+  [8]: http://qm.qq.com/cgi-bin/qm/qr?k=N9JkOSj4KvWRtb_7fa_YBAYrjziuBSTm

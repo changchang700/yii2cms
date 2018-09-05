@@ -2943,3 +2943,74 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1535103525.666
     'REQUEST_TIME' => 1535103525
 ]
+2018-09-05 16:55:13 [127.0.0.1][1][cr21o01qh26sh2otep6vq1nng2][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "_blank".' in D:\mygithub\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('_blank', Array)
+#1 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\mygithub\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message '页面未找到。' in D:\mygithub\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 D:\mygithub\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\mygithub\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2018-09-05 16:55:13 [127.0.0.1][1][cr21o01qh26sh2otep6vq1nng2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'user_cache_id' => '8'
+    'advanced-backend' => 'cr21o01qh26sh2otep6vq1nng2'
+    '_identity-backend' => '56fc499c85bdd73b4e5cb061a3a04c835da2db1531fc90d199d7fe26aa17f683a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    '_csrf-backend' => 'f2c292e1e53bb97b9a10ce0ff43a934ba8d086beeb7865a896f98835cdea84e4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"xGggh1HFawI2-x9xb6OKnsYE5NJhO259\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'www.cmsyii2.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://www.cmsyii2.com/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'user_cache_id=8; advanced-backend=cr21o01qh26sh2otep6vq1nng2; _identity-backend=56fc499c85bdd73b4e5cb061a3a04c835da2db1531fc90d199d7fe26aa17f683a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; _csrf-backend=f2c292e1e53bb97b9a10ce0ff43a934ba8d086beeb7865a896f98835cdea84e4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22xGggh1HFawI2-x9xb6OKnsYE5NJhO259%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jre-9.0.1\\bin;C:\\Program Files\\Java\\jdk-9.0.1\\bin;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;D:\\Soft\\SVN\\bin;E:\\phpStudy\\php\\php-5.6.30;D:\\Soft\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;D:\\Soft\\Python;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;;D:\\Soft\\psql\\pg10\\bin;C:\\Program Files\\Anaconda3;C:\\Program Files\\Anaconda3\\Scripts;C:\\Program Files\\Anaconda3\\Library\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.6.30'
+    'SERVER_NAME' => 'www.cmsyii2.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/mygithub/backend/web'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/mygithub/backend/web/index.php'
+    'REMOTE_PORT' => '58436'
+    'REDIRECT_URL' => '/_blank'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/_blank'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1536137713.121
+    'REQUEST_TIME' => 1536137713
+]

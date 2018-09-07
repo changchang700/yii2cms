@@ -227,7 +227,7 @@ layui.config({
             id: 'LAY_layuipro',
             btn: ['立即查看'],
             moveType: 1,
-            content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>欢迎使用本系统哦，本系统完全开源免费，加入QQ群一起交流讨论<a style="color:blue;" target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?k=N9JkOSj4KvWRtb_7fa_YBAYrjziuBSTm">加入QQ群</a></p></div>',
+            content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>亲爱的，欢迎使用本系统，新增在线音乐功能。<div style="text-align:center;margin-top: -25px;"><br><a target="_blank" style="color:blue;" href="http://www.alilinet.com">前台博客地址</a><br><a target="_blank" style="color:blue;" href="https://github.com/changchang700/yii2cms">后台开源地址</a><br><a target="_blank" style="color:blue;" href="http://qm.qq.com/cgi-bin/qm/qr?k=N9JkOSj4KvWRtb_7fa_YBAYrjziuBSTm">加入群群嗨皮</a></div></p></div>',
             success: function (layero) {
                 var btn = layero.find('.layui-layer-btn');
                 btn.css('text-align', 'center');

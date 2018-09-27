@@ -91,10 +91,10 @@ yii2_cms.sql            数据库文件
 
 
   [1]: http://admin.alilinet.com/
-  [2]: https://resources.alilinet.com/20180824/201808240951316663.png
-  [3]: https://resources.alilinet.com/20180824/201808240953476842.png
-  [4]: https://resources.alilinet.com/20180824/201808240958273230.png
-  [5]: https://resources.alilinet.com/20180824/201808240958395263.png
-  [6]: https://resources.alilinet.com/20180824/201808240958346071.png
-  [7]: https://resources.alilinet.com/20180824/201808240958442149.png
+  [2]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240951316663.png
+  [3]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240953476842.png
+  [4]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240958273230.png
+  [5]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240958395263.png
+  [6]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240958346071.png
+  [7]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240958442149.png
   [8]: http://qm.qq.com/cgi-bin/qm/qr?k=N9JkOSj4KvWRtb_7fa_YBAYrjziuBSTm

@@ -1,5 +1,5 @@
 /*ifarm盒子样式*/
-.childrenBody {margin: 10px 10px 0;}
+.childrenBody {margin: 0 10px 0;}
 /*公共样式*/
 .main_body{ min-width:320px; }
 .layui-elem-quote.title{ padding:10px 15px; margin-bottom:0; }

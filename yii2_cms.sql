@@ -38,7 +38,8 @@ CREATE TABLE `t_admin` (
 -- ----------------------------
 -- Records of t_admin
 -- ----------------------------
-INSERT INTO `t_admin` VALUES ('1', 'admin', '木木', 'https://resources.alilinet.com/20180126/201801261428499423.jpg', 'FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6', '$2y$13$UrGdqQIliZJ6wMYGP.rkIuauyQB7s3V9Pt3dAC5uRYFrnFzAHrZAG', 'cmOZYsw8-UF2KKNuWRz2sMIimlpbqz_J_1534990319', '2107898148@qq.com', '10', '1498634445', '1534990319');
+INSERT INTO `t_admin` VALUES ('1', 'admin', '木木', 'https://resources.alilinet.com/20180126/201801261428499423.jpg', 'FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6', '$2y$13$E27DkITDZIJbC0Snm3u8e.G1uueBTI4ubsPtV5S5PjmNroxqLbHJy', 'cmOZYsw8-UF2KKNuWRz2sMIimlpbqz_J_1534990319', '2107898148@qq.com', '10', '1498634445', '1534990319');
+INSERT INTO `t_admin` VALUES ('1', 'demo', '演示', 'https://resources.alilinet.com/20180126/201801261428499423.jpg', 'FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6', '$2y$13$UrGdqQIliZJ6wMYGP.rkIuauyQB7s3V9Pt3dAC5uRYFrnFzAHrZAG', 'cmOZYsw8-UF2KKNuWRz2sMIimlpbqz_J_1534990319', '2107898148@qq.com', '10', '1498634445', '1534990319');
 
 -- ----------------------------
 -- Table structure for t_admin_log

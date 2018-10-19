@@ -9,11 +9,13 @@ use yii\bootstrap\ActiveForm;
 $this->title = '管理登录';
 
 $fieldOptions1 = [
-    'options' => ['class' => 'layui-form-item']
+    'options' => ['class' => 'layui-form-item'],
+    'inputTemplate' => "{input}<span class='glyphicon glyphicon-envelope form-control-feedback'></span>"
 ];
 
 $fieldOptions2 = [
-    'options' => ['class' => 'layui-form-item']
+    'options' => ['class' => 'layui-form-item'],
+    'inputTemplate' => "{input}<span class='glyphicon glyphicon-lock form-control-feedback'></span>"
 ];
 ?>
 
@@ -21,45 +23,17 @@ $fieldOptions2 = [
 	<h1>后台登录</h1>
 </div>
 <div>
-	<?php $form = ActiveForm::begin(
-			[
-				'layout' => 'horizontal',
-				'id' => 'login-form',
-				'options'=>[
-					'class' => 'layui-form'
-					],
-				'enableClientValidation' => false,
-				'fieldConfig'=>[
-					'template' => "{label}\n{input}\n{error}",
-					'horizontalCssClasses' => [
-						'label' => 'col-sm-4',
-						'error' => 'login_error_msg',
-					]
-				]
-				
-			]
-		); 
-	?>
+	<?php $form = ActiveForm::begin(['id' => 'login-form','options'=>['class' => 'layui-form'], 'enableClientValidation' => false]); ?>
 
-	<?= $form->field($model, 'username', $fieldOptions1)
+	<?= $form
+		->field($model, 'username', $fieldOptions1)
 		->label(false)
-		->textInput(
-				[
-					'class' => 'layui-input',
-					'lay-verify'=>'required',
-					'placeholder' => $model->getAttributeLabel('username')
-				]) 
-	?>
+		->textInput(['class' => 'layui-input','lay-verify'=>'required','placeholder' => $model->getAttributeLabel('username')]) ?>
 
-	<?= $form->field($model, 'password', $fieldOptions2)
+	<?= $form
+		->field($model, 'password', $fieldOptions2)
 		->label(false)
-		->passwordInput(
-				[
-					'class' => 'layui-input',
-					'lay-verify'=>'required',
-					'placeholder' => $model->getAttributeLabel('password')
-				]) 
-	?>
+		->passwordInput(['class' => 'layui-input','lay-verify'=>'required','placeholder' => $model->getAttributeLabel('password')]) ?>
 
 
 	<div class="layui-form-item">
@@ -70,10 +44,10 @@ $fieldOptions2 = [
 		<div style="float: left;">
 			<?= $form->field($model, 'rememberMe')->label(false)->checkbox(['class' => 'lay-ignore']) ?>
 		</div>
-		<div style="float: left;margin-top: 5px;color: #999;padding-left: -8px;font-size: 12px;">
+		<div style="float: left;position: relative;margin-top: 5px;color: #999;padding-left: -8px;font-size: 12px;">
 			<span>记住密码</span>
 		</div>
-		<div style="float: right;margin-top: -5px;">
+		<div style="position: absolute;right: 18px;bottom: 37px;">
 			<?= Html::a('忘记密码', ['/rbac/user/request-password-reset'], ['class' => 'layui-form-mid layui-word-aux',"style"=>'float:right;padding: 5px 0;']) ?>
 		</div>
 	</div>

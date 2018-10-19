@@ -29,7 +29,7 @@ return [
     'Type' => '类型',
     'Description' => '描述',
     'Rule Name' => '规则名称',
-    'Data' => '数据',
+    'Data' => '图标',
     'Update Role' => '更新角色',
     'Delete' => '删除',
     'Are you sure to delete this item?' => '确认要删除吗?',

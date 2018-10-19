@@ -13,8 +13,9 @@ class LayuiAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'plugins/layui/css/layui.css',
-		'css/main.css',
-		'css/iconfont.css',
+		'resources/css/main.css',
+		'resources/css/iconfont.css',
+		'plugins/awesome/css/font-awesome.min.css',
     ];
     public $js = [
 		'plugins/layui/layui.js',

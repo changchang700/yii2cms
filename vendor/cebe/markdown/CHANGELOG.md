@@ -1,10 +1,35 @@
 CHANGELOG
 =========
 
-Version 1.0.2 on 26. Mar. 2018
+Version 1.1.2 on 16. Jul 2017
+-----------------------------
+
+- #126 Fixed crash on empty lines that extend a lazy list
+- #128 Fix table renderer which including default alignment (@tanakahisateru)
+- #129  Use given encoded URL if decoded URL text looks insecure, e.g. uses broken UTF-8 (@tanakahisateru)
+- Added a workaround for a [PHP bug](https://bugs.php.net/bug.php?id=45735) which exists in versions `<` 7.0, where `preg_match()` causes a segfault
+  on [catastropic backtracking][] in emph/strong parsing.
+  
+[catastropic backtracking]: http://www.regular-expressions.info/catastrophic.html
+
+Version 1.1.1 on 14. Sep 2016
+-----------------------------
+
+- #112 Fixed parsing for custom self-closing HTML tags
+- #113 improve extensibility by making `prepareMarkers()` protected and add `parseBlock()` method
+- #114 better handling of continued inline HTML in paragraphs
+
+Version 1.1.0 on 06. Mar. 2015
 ------------------------------
 
-- Improved handling of custom syntax with `[[`, references should not use `[` as the first character in the reference name.
+- improve compatibility with github flavored markdown
+- #64 fixed some rendering issue with emph and strong
+- #56 trailing and leading spaces in a link are now ignored
+- fixed various issues with table rendering
+- #98 Fix PHP fatal error when maximumNestingLevel was reached (@tanakahisateru)
+- refactored nested and lazy list handling, improved overall list rendering consistency
+- Lines containing "0" where skipped or considered empty in some cases (@tanakahisateru)
+- #54 escape characters are now also considered inside of urls
 
 Version 1.0.1 on 25. Okt. 2014
 ------------------------------

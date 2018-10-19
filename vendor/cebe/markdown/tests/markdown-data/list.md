@@ -44,3 +44,17 @@
 -   more indented line
 - different indent
 -not a list item
+
+---
+
+- one item
+
+---
+
+- List...
+
+  
+
+Ensure the above will not throw Exception
+
+---

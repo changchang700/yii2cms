@@ -37,7 +37,7 @@ class Parser implements ParserInterface
     /**
      * {@inheritdoc}
      */
-    public function parse($source)
+    public function parse(string $source): array
     {
         $reader = new Reader($source);
         $stream = $this->tokenizer->tokenize($reader);
@@ -50,11 +50,9 @@ class Parser implements ParserInterface
      *
      * @param Token[] $tokens
      *
-     * @return array
-     *
      * @throws SyntaxErrorException
      */
-    public static function parseSeries(array $tokens)
+    public static function parseSeries(array $tokens): array
     {
         foreach ($tokens as $token) {
             if ($token->isString()) {
@@ -94,12 +92,7 @@ class Parser implements ParserInterface
         );
     }
 
-    /**
-     * Parses selector nodes.
-     *
-     * @return array
-     */
-    private function parseSelectorList(TokenStream $stream)
+    private function parseSelectorList(TokenStream $stream): array
     {
         $stream->skipWhitespace();
         $selectors = array();
@@ -118,14 +111,7 @@ class Parser implements ParserInterface
         return $selectors;
     }
 
-    /**
-     * Parses next selector or combined node.
-     *
-     * @return Node\SelectorNode
-     *
-     * @throws SyntaxErrorException
-     */
-    private function parserSelectorNode(TokenStream $stream)
+    private function parserSelectorNode(TokenStream $stream): Node\SelectorNode
     {
         list($result, $pseudoElement) = $this->parseSimpleSelector($stream);
 
@@ -158,18 +144,13 @@ class Parser implements ParserInterface
     /**
      * Parses next simple node (hash, class, pseudo, negation).
      *
-     * @param TokenStream $stream
-     * @param bool        $insideNegation
-     *
-     * @return array
-     *
      * @throws SyntaxErrorException
      */
-    private function parseSimpleSelector(TokenStream $stream, $insideNegation = false)
+    private function parseSimpleSelector(TokenStream $stream, bool $insideNegation = false): array
     {
         $stream->skipWhitespace();
 
-        $selectorStart = count($stream->getUsed());
+        $selectorStart = \count($stream->getUsed());
         $result = $this->parseElementNode($stream);
         $pseudoElement = null;
 
@@ -206,7 +187,7 @@ class Parser implements ParserInterface
                 }
 
                 $identifier = $stream->getNextIdentifier();
-                if (in_array(strtolower($identifier), array('first-line', 'first-letter', 'before', 'after'))) {
+                if (\in_array(strtolower($identifier), array('first-line', 'first-letter', 'before', 'after'))) {
                     // Special case: CSS 2.1 pseudo-elements can have a single ':'.
                     // Any new pseudo-element must have two.
                     $pseudoElement = $identifier;
@@ -272,19 +253,14 @@ class Parser implements ParserInterface
             }
         }
 
-        if (count($stream->getUsed()) === $selectorStart) {
+        if (\count($stream->getUsed()) === $selectorStart) {
             throw SyntaxErrorException::unexpectedToken('selector', $stream->getPeek());
         }
 
         return array($result, $pseudoElement);
     }
 
-    /**
-     * Parses next element node.
-     *
-     * @return Node\ElementNode
-     */
-    private function parseElementNode(TokenStream $stream)
+    private function parseElementNode(TokenStream $stream): Node\ElementNode
     {
         $peek = $stream->getPeek();
 
@@ -310,14 +286,7 @@ class Parser implements ParserInterface
         return new Node\ElementNode($namespace, $element);
     }
 
-    /**
-     * Parses next attribute node.
-     *
-     * @return Node\AttributeNode
-     *
-     * @throws SyntaxErrorException
-     */
-    private function parseAttributeNode(Node\NodeInterface $selector, TokenStream $stream)
+    private function parseAttributeNode(Node\NodeInterface $selector, TokenStream $stream): Node\AttributeNode
     {
         $stream->skipWhitespace();
         $attribute = $stream->getNextIdentifierOrStar();

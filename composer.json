@@ -18,7 +18,7 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "yiisoft/yii2-apidoc": "^2.1"
+        "zoujingli/wechat-developer": "^1.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

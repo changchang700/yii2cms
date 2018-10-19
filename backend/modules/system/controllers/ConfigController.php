@@ -85,6 +85,7 @@ class ConfigController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
+			$model->updated_at = time();
 			if($model->save()){
 				return $this->redirect(['view', 'id' => $model->id]);
 			}

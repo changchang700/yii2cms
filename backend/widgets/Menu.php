@@ -22,6 +22,8 @@ class Menu extends \yii\widgets\Menu
     public $submenuTemplate = "\n<dl class='layui-nav-child' {show}>\n{items}\n</dl>\n";
     public $activateParents = true;
     public $defaultIconHtml = '<i class="iconfont">&#xe658;</i> ';
+	
+	public $defaultIconHtmlIcon = '<i class="iconfont fa fa-heart-o"></i> ';
 
     /**
      * @var string is prefix that will be added to $item['icon'] if it exist.
@@ -75,12 +77,20 @@ class Menu extends \yii\widgets\Menu
             $labelTemplate = $this->labelTemplate;
             $linkTemplate = $this->linkTemplate;
         }
-
-        $replacements = [
-            '{label}' => strtr($this->labelTemplate, ['{label}' => $item['label'],]),
-            '{icon}' => empty($item['icon']) ? $this->defaultIconHtml: '<i class="iconfont" data-icon="'.self::$iconClassPrefix . $item['icon'].'">'.self::$iconClassPrefix . $item['icon'].'</i> ',
-            '{url}' => isset($item['url'][0]) ? 'javascript:;' . '" data-url="'.Url::to($item["url"]).'"' : 'javascript:void(0);',
-        ];
+		if(substr($item['icon'],0,2)=='&#'){
+			$replacements = [
+				'{label}' => strtr($this->labelTemplate, ['{label}' => $item['label'],]),
+				'{icon}' => empty($item['icon']) ? $this->defaultIconHtml: '<i class="iconfont" data-icon="'.self::$iconClassPrefix . $item['icon'].'">'.self::$iconClassPrefix . $item['icon'].'</i> ',
+				'{url}' => isset($item['url'][0]) ? 'javascript:;' . '" data-url="'.Url::to($item["url"]).'"' : 'javascript:void(0);',
+			];
+		}else{
+			$replacements = [
+				'{label}' => strtr($this->labelTemplate, ['{label}' => $item['label'],]),
+				'{icon}' => empty($item['icon']) ? $this->defaultIconHtmlIcon: '<i class="'.$item['icon'].' "></i> ',
+				'{url}' => isset($item['url'][0]) ? 'javascript:;' . '" data-url="'.Url::to($item["url"]).'"' : 'javascript:void(0);',
+			];
+		}
+        
 
         $template = ArrayHelper::getValue($item, 'template', isset($item['url']) ? $linkTemplate : $labelTemplate);
         return strtr($template, $replacements);
@@ -138,10 +148,6 @@ class Menu extends \yii\widgets\Menu
     protected function normalizeItems($items, &$active)
     {
         foreach ($items as $i => $item) {
-            if (isset($item['visible']) && !$item['visible']) {
-                unset($items[$i]);
-                continue;
-            }
             if (!isset($item['label'])) {
                 $item['label'] = '';
             }

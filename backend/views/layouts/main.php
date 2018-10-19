@@ -3,27 +3,26 @@ use backend\assets\AppAsset;
 use backend\assets\LayuiAsset;
 
 $action_list = [
-	'login',
-	'request-password-reset',
-	'reset-password'
+	'user/login',
+	'user/request-password-reset',
+	'user/reset-password'
 ];
 
-if (in_array(Yii::$app->controller->action->id, $action_list)) { 
+if (in_array(Yii::$app->controller->id . '/' . Yii::$app->controller->action->id, $action_list)) { 
     echo $this->render(
-        'main-login',
-        ['content' => $content]
-	);
+			'main-login',
+			['content' => $content]
+		);
 }else{
 	$bootstrp_list = [
-		'site',
-		'index'
+		'site/index'
 	];
-	//只需要在首页的时候加载资源，其他方法不需要加载，因为他们自带加载资源，不然会多次加载资源
-	if(in_array(Yii::$app->controller->id, $bootstrp_list)){
+	//只需要在首页的时候加载某些资源
+	if(in_array(Yii::$app->controller->id . '/' . Yii::$app->controller->action->id, $bootstrp_list)){
 		LayuiAsset::register($this);
-		LayuiAsset::addScript($this, "@web/js/index.js");
+		LayuiAsset::addScript($this, "@web/resources/js/index.js");
 	}else{
-		//加载bootstrp资源，后期统一资源后只加载一个资源
+		//加载bootstrp资源
 		AppAsset::register($this);
 	}
 	echo $this->render(

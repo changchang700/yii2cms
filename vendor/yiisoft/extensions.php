@@ -24,10 +24,10 @@ return array (
   'yiisoft/yii2-debug' => 
   array (
     'name' => 'yiisoft/yii2-debug',
-    'version' => '2.0.13.0',
+    'version' => '2.0.14.0',
     'alias' => 
     array (
-      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug',
+      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
     ),
   ),
   'yiisoft/yii2-gii' => 
@@ -46,15 +46,6 @@ return array (
     'alias' => 
     array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
-    ),
-  ),
-  'yiisoft/yii2-apidoc' => 
-  array (
-    'name' => 'yiisoft/yii2-apidoc',
-    'version' => '2.1.0.0',
-    'alias' => 
-    array (
-      '@yii/apidoc' => $vendorDir . '/yiisoft/yii2-apidoc',
     ),
   ),
 );

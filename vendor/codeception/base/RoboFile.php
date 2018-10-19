@@ -6,7 +6,7 @@ use Robo\Task\Development\GenerateMarkdownDoc as Doc;
 
 class RoboFile extends \Robo\Tasks
 {
-    const STABLE_BRANCH = '2.4';
+    const STABLE_BRANCH = '2.5';
     const REPO_BLOB_URL = 'https://github.com/Codeception/Codeception/blob';
 
     public function release()
@@ -519,8 +519,10 @@ EOF;
                 $releaseFile->line("\n## $branch");
                 if ($major < 2) {
                     $releaseFile->line("*Requires: PHP 5.3 and higher + CURL*\n");
-                } else {
+                } elseif ($major == 2 && $minor < 4) {
                     $releaseFile->line("*Requires: PHP 5.4 and higher + CURL*\n");
+                } else {
+                    $releaseFile->line("*Requires: PHP 5.6 and higher + CURL*\n");
                 }
                 $releaseFile->line("* **[Download Latest $branch Release]($downloadUrl)**");
             }

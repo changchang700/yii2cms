@@ -14,7 +14,7 @@ use yii\db\Query;
  * @property integer $parent Menu parent
  * @property string $route Route for this menu
  * @property integer $order Menu order
- * @property string $data Extra information for this menu
+ * @property string $icon Extra information for this menu
  *
  * @property Menu $menuParent Menu parent
  * @property Menu[] $menus Menu children
@@ -56,7 +56,7 @@ class Menu extends \yii\db\ActiveRecord
             [['parent_name'], 'in',
                 'range' => static::find()->select(['name'])->column(),
                 'message' => 'Menu "{value}" not found.'],
-            [['parent', 'route', 'data', 'order'], 'default'],
+            [['parent', 'route', 'icon', 'order'], 'default'],
             [['parent'], 'filterParent', 'when' => function() {
                 return !$this->isNewRecord;
             }],
@@ -98,7 +98,7 @@ class Menu extends \yii\db\ActiveRecord
             'parent_name' => Yii::t('rbac-admin', 'Parent Name'),
             'route' => Yii::t('rbac-admin', 'Route'),
             'order' => Yii::t('rbac-admin', 'Order'),
-            'data' => Yii::t('rbac-admin', 'Data'),
+            'icon' => Yii::t('rbac-admin', 'Icon'),
         ];
     }
 

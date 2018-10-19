@@ -67,8 +67,9 @@ $this->registerJs($this->render('js/index.js'));
 					'style'=> 'text-align: center;'
 				],
 			],
+			'ip',
             [
-                'attribute' => 'ip',
+                'attribute' => 'created_at',
 				'contentOptions' => ['class'=>'text-center'],
                 'value' => function($model){
                     return date("Y-m-d H:i:s",$model->created_at);

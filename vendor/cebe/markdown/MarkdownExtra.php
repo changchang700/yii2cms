@@ -69,7 +69,7 @@ class MarkdownExtra extends Markdown
 
 	protected function identifyReference($line)
 	{
-		return ($line[0] === ' ' || $line[0] === '[') && preg_match('/^ {0,3}\[[^\[](.*?)\]:\s*([^\s]+?)(?:\s+[\'"](.+?)[\'"])?\s*('.$this->_specialAttributesRegex.')?\s*$/', $line);
+		return ($line[0] === ' ' || $line[0] === '[') && preg_match('/^ {0,3}\[(.+?)\]:\s*([^\s]+?)(?:\s+[\'"](.+?)[\'"])?\s*('.$this->_specialAttributesRegex.')?\s*$/', $line);
 	}
 
 	/**
@@ -81,7 +81,7 @@ class MarkdownExtra extends Markdown
 			$label = strtolower($matches[1]);
 
 			$this->references[$label] = [
-				'url' => $matches[2],
+				'url' => $this->replaceEscape($matches[2]),
 			];
 			if (isset($matches[3])) {
 				$this->references[$label]['title'] = $matches[3];

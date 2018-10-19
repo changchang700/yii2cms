@@ -85,13 +85,27 @@ class Markdown extends Parser
 		$content = [];
 		for ($i = $current, $count = count($lines); $i < $count; $i++) {
 			$line = $lines[$i];
-			if (!empty($line) && ltrim($line) !== '' &&
-				!($line[0] === "\t" || $line[0] === " " && strncmp($line, '    ', 4) === 0) &&
-				!$this->identifyHeadline($line, $lines, $i))
-			{
-				$content[] = $line;
-			} else {
+
+			// a list may break a paragraph when it is inside of a list
+			if (isset($this->context[1]) && $this->context[1] === 'list' && !ctype_alpha($line[0]) && (
+				$this->identifyUl($line, $lines, $i) || $this->identifyOl($line, $lines, $i))) {
 				break;
+			}
+
+			if ($line === '' || ltrim($line) === '' || $this->identifyHeadline($line, $lines, $i)) {
+				break;
+			} elseif ($line[0] === "\t" || $line[0] === " " && strncmp($line, '    ', 4) === 0) {
+				// possible beginning of a code block
+				// but check for continued inline HTML
+				// e.g. <img src="file.jpg"
+				//           alt="some alt aligned with src attribute" title="some text" />
+				if (preg_match('~<\w+([^>]+)$~s', implode("\n", $content))) {
+					$content[] = $line;
+				} else {
+					break;
+				}
+			} else {
+				$content[] = $line;
 			}
 		}
 		$block = [

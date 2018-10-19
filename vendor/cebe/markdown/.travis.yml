@@ -4,19 +4,32 @@ php:
   - 5.4
   - 5.5
   - 5.6
+  - 7.0
+  - 7.1
+  - nightly
   - hhvm
-  - hhvm-nightly
+
+# faster builds on new travis setup not using sudo
+sudo: false
+
+# travis does not support HHVM on other platforms, choosing trusty
+dist: trusty
+
+# cache composer cache
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 # run build against hhvm but allow them to fail
 # http://docs.travis-ci.com/user/build-configuration/#Rows-That-are-Allowed-To-Fail
 matrix:
   fast_finish: true
-#  allow_failures:
-#    - php: hhvm-nightly
+  allow_failures:
+    - php: nightly
 
 install:
   - composer self-update && composer --version
-  - composer install --dev --prefer-dist
+  - composer install --prefer-dist
 
 script:
   - vendor/bin/phpunit --verbose --coverage-clover=coverage.clover

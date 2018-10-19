@@ -26,8 +26,16 @@ trait EmphStrongTrait
 		}
 
 		if ($marker == $text[1]) { // strong
-			if ($marker == '*' && preg_match('/^[*]{2}((?:[^*]|[*][^*]*[*])+?)[*]{2}(?![*])/s', $text, $matches) ||
-				$marker == '_' && preg_match('/^__((?:[^_]|_[^_]*_)+?)__(?!_)/us', $text, $matches)) {
+			// work around a PHP bug that crashes with a segfault on too much regex backtrack
+			// check whether the end marker exists in the text
+			// https://github.com/erusev/parsedown/issues/443
+			// https://bugs.php.net/bug.php?id=45735
+			if (strpos($text, $marker . $marker, 2) === false) {
+				return [['text', $text[0] . $text[1]], 2];
+			}
+
+			if ($marker == '*' && preg_match('/^[*]{2}((?:[^*]|[*][^*]*[*])+?)[*]{2}(?![*]{2})/s', $text, $matches) ||
+				$marker == '_' && preg_match('/^__((?:[^_]|_[^_]*_)+?)__(?!__)/us', $text, $matches)) {
 
 				return [
 					[
@@ -38,8 +46,16 @@ trait EmphStrongTrait
 				];
 			}
 		} else { // emph
-			if ($marker == '*' && preg_match('/^[*]((?:[^*]|[*][*][^*]+?[*][*])+?)[*](?![*])/s', $text, $matches) ||
-				$marker == '_' && preg_match('/^_((?:[^_]|__[^_]*__)+?)_(?!_)\b/us', $text, $matches)) {
+			// work around a PHP bug that crashes with a segfault on too much regex backtrack
+			// check whether the end marker exists in the text
+			// https://github.com/erusev/parsedown/issues/443
+			// https://bugs.php.net/bug.php?id=45735
+			if (strpos($text, $marker, 1) === false) {
+				return [['text', $text[0]], 1];
+			}
+
+			if ($marker == '*' && preg_match('/^[*]((?:[^*]|[*][*][^*]+?[*][*])+?)[*](?![*][^*])/s', $text, $matches) ||
+				$marker == '_' && preg_match('/^_((?:[^_]|__[^_]*__)+?)_(?!_[^_])\b/us', $text, $matches)) {
 				return [
 					[
 						'emph',

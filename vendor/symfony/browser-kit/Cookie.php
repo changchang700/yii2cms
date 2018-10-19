@@ -53,7 +53,7 @@ class Cookie
      * @param bool        $httponly     The cookie httponly flag
      * @param bool        $encodedValue Whether the value is encoded or not
      */
-    public function __construct($name, $value, $expires = null, $path = null, $domain = '', $secure = false, $httponly = true, $encodedValue = false)
+    public function __construct(string $name, ?string $value, string $expires = null, string $path = null, string $domain = '', bool $secure = false, bool $httponly = true, bool $encodedValue = false)
     {
         if ($encodedValue) {
             $this->value = urldecode($value);
@@ -65,8 +65,8 @@ class Cookie
         $this->name = $name;
         $this->path = empty($path) ? '/' : $path;
         $this->domain = $domain;
-        $this->secure = (bool) $secure;
-        $this->httponly = (bool) $httponly;
+        $this->secure = $secure;
+        $this->httponly = $httponly;
 
         if (null !== $expires) {
             $timestampAsDateTime = \DateTime::createFromFormat('U', $expires);
@@ -169,7 +169,7 @@ class Cookie
                 continue;
             }
 
-            if (2 === count($elements = explode('=', $part, 2))) {
+            if (2 === \count($elements = explode('=', $part, 2))) {
                 if ('expires' === strtolower($elements[0])) {
                     $elements[1] = self::parseDate($elements[1]);
                 }
@@ -193,7 +193,7 @@ class Cookie
     private static function parseDate($dateValue)
     {
         // trim single quotes around date if present
-        if (($length = strlen($dateValue)) > 1 && "'" === $dateValue[0] && "'" === $dateValue[$length - 1]) {
+        if (($length = \strlen($dateValue)) > 1 && "'" === $dateValue[0] && "'" === $dateValue[$length - 1]) {
             $dateValue = substr($dateValue, 1, -1);
         }
 

@@ -7,7 +7,8 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+namespace PHPUnit\Runner;
 
-class PHPUnit_Runner_Exception extends RuntimeException implements PHPUnit_Exception
+class Exception extends \RuntimeException implements \PHPUnit\Exception
 {
 }

@@ -3,8 +3,8 @@ use backend\assets\LayuiAsset;
 use yii\helpers\Html;
 
 LayuiAsset::register($this);
-LayuiAsset::addScript($this, "@web/js/login.js");
-LayuiAsset::addCss($this, "@web/css/login.css");
+LayuiAsset::addScript($this, "@web/resources/js/login.js");
+LayuiAsset::addCss($this, "@web/resources/css/login.css");
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ LayuiAsset::addCss($this, "@web/css/login.css");
 </head>
 <body>
 	<?php $this->beginBody() ?>
-	<div class="login_background" style="background: url(<?=Yii::getAlias("@web/images/login.jpg")?>) no-repeat center center;"></div>
+	<div class="login_background" style="background: url(<?=Yii::getAlias("@web/resources/images/login.jpg")?>) no-repeat center center;"></div>
 	<div class="login">
 		<?= $content ?>
 	</div>

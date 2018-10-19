@@ -38,7 +38,7 @@ class LintCommand extends Command
     private $directoryIteratorProvider;
     private $isReadableProvider;
 
-    public function __construct($name = null, $directoryIteratorProvider = null, $isReadableProvider = null)
+    public function __construct(string $name = null, callable $directoryIteratorProvider = null, callable $isReadableProvider = null)
     {
         parent::__construct($name);
 
@@ -141,7 +141,7 @@ EOF
 
     private function displayTxt(SymfonyStyle $io, array $filesInfo)
     {
-        $countFiles = count($filesInfo);
+        $countFiles = \count($filesInfo);
         $erroredFiles = 0;
 
         foreach ($filesInfo as $info) {
@@ -188,7 +188,7 @@ EOF
         }
 
         foreach ($this->getDirectoryIterator($fileOrDirectory) as $file) {
-            if (!in_array($file->getExtension(), array('yml', 'yaml'))) {
+            if (!\in_array($file->getExtension(), array('yml', 'yaml'))) {
                 continue;
             }
 
@@ -229,7 +229,7 @@ EOF
         };
 
         if (null !== $this->directoryIteratorProvider) {
-            return call_user_func($this->directoryIteratorProvider, $directory, $default);
+            return \call_user_func($this->directoryIteratorProvider, $directory, $default);
         }
 
         return $default($directory);
@@ -242,7 +242,7 @@ EOF
         };
 
         if (null !== $this->isReadableProvider) {
-            return call_user_func($this->isReadableProvider, $fileOrDirectory, $default);
+            return \call_user_func($this->isReadableProvider, $fileOrDirectory, $default);
         }
 
         return $default($fileOrDirectory);

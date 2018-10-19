@@ -43,6 +43,20 @@ trait LinkTrait
 	protected $references = [];
 
 	/**
+	 * Remove backslash from escaped characters
+	 * @param $text
+	 * @return string
+	 */
+	protected function replaceEscape($text)
+	{
+		$strtr = [];
+		foreach($this->escapeCharacters as $char) {
+			$strtr["\\$char"] = $char;
+		}
+		return strtr($text, $strtr);
+	}
+
+	/**
 	 * Parses a link indicated by `[`.
 	 * @marker [
 	 */
@@ -116,14 +130,14 @@ trait LinkTrait
 				/(?(R) # in case of recursion match parentheses
 					 \(((?>[^\s()]+)|(?R))*\)
 				|      # else match a link with title
-					^\((((?>[^\s()]+)|(?R))*)(\s+"(.*?)")?\)
+					^\(\s*(((?>[^\s()]+)|(?R))*)(\s+"(.*?)")?\s*\)
 				)/x
 REGEXP;
 			if (preg_match($pattern, $markdown, $refMatches)) {
 				// inline link
 				return [
 					$text,
-					isset($refMatches[2]) ? $refMatches[2] : '', // url
+					isset($refMatches[2]) ? $this->replaceEscape($refMatches[2]) : '', // url
 					empty($refMatches[5]) ? null: $refMatches[5], // title
 					$offset + strlen($refMatches[0]), // offset
 					null, // reference key
@@ -158,13 +172,13 @@ REGEXP;
 				if (preg_match('/^<([^\s]*?@[^\s]*?\.\w+?)>/', $text, $matches)) {
 					// email address
 					return [
-						['email', $matches[1]],
+						['email', $this->replaceEscape($matches[1])],
 						strlen($matches[0])
 					];
 				} elseif (preg_match('/^<([a-z]{3,}:\/\/[^\s]+?)>/', $text, $matches)) {
 					// URL
 					return [
-						['url', $matches[1]],
+						['url', $this->replaceEscape($matches[1])],
 						strlen($matches[0])
 					];
 				}
@@ -186,7 +200,9 @@ REGEXP;
 	protected function renderUrl($block)
 	{
 		$url = htmlspecialchars($block[1], ENT_COMPAT | ENT_HTML401, 'UTF-8');
-		$text = htmlspecialchars(urldecode($block[1]), ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8');
+		$decodedUrl = urldecode($block[1]);
+		$secureUrlText = preg_match('//u', $decodedUrl) ? $decodedUrl : $block[1];
+		$text = htmlspecialchars($secureUrlText, ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8');
 		return "<a href=\"$url\">$text</a>";
 	}
 
@@ -232,7 +248,7 @@ REGEXP;
 
 	protected function identifyReference($line)
 	{
-		return isset($line[0]) && ($line[0] === ' ' || $line[0] === '[') && preg_match('/^ {0,3}\[[^\[](.*?)\]:\s*([^\s]+?)(?:\s+[\'"](.+?)[\'"])?\s*$/', $line);
+		return ($line[0] === ' ' || $line[0] === '[') && preg_match('/^ {0,3}\[(.+?)\]:\s*([^\s]+?)(?:\s+[\'"](.+?)[\'"])?\s*$/', $line);
 	}
 
 	/**
@@ -244,7 +260,7 @@ REGEXP;
 			$label = strtolower($matches[1]);
 
 			$this->references[$label] = [
-				'url' => $matches[2],
+				'url' => $this->replaceEscape($matches[2]),
 			];
 			if (isset($matches[3])) {
 				$this->references[$label]['title'] = $matches[3];

@@ -17,8 +17,8 @@ class sms extends Component {
     }
 
     private static function send($phone, $msg) {
-        $accesskey = 5130;
-        $secretkey = "填写你的来信码secretkey";
+        $accesskey = "百度来信码 开通及可以获取accesskey";
+        $secretkey = "百度来信码 开通及可以获取sercetkey";
         $url = "http://imlaixin.cn/Api/send/data/json?accesskey={$accesskey}&secretkey={$secretkey}&mobile={$phone}&content=" . urlencode($msg);
 
         $json = self::curl_get($url);

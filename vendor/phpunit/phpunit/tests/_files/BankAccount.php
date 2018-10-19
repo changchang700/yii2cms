@@ -14,7 +14,6 @@ class BankAccountException extends RuntimeException
 
 /**
  * A bank account.
- *
  */
 class BankAccount
 {
@@ -33,22 +32,6 @@ class BankAccount
     public function getBalance()
     {
         return $this->balance;
-    }
-
-    /**
-     * Sets the bank account's balance.
-     *
-     * @param float $balance
-     *
-     * @throws BankAccountException
-     */
-    protected function setBalance($balance)
-    {
-        if ($balance >= 0) {
-            $this->balance = $balance;
-        } else {
-            throw new BankAccountException;
-        }
     }
 
     /**
@@ -77,5 +60,21 @@ class BankAccount
         $this->setBalance($this->getBalance() - $balance);
 
         return $this->getBalance();
+    }
+
+    /**
+     * Sets the bank account's balance.
+     *
+     * @param float $balance
+     *
+     * @throws BankAccountException
+     */
+    protected function setBalance($balance): void
+    {
+        if ($balance >= 0) {
+            $this->balance = $balance;
+        } else {
+            throw new BankAccountException;
+        }
     }
 }

@@ -91,7 +91,7 @@ layui.config({
         var index = layui.layer.open({
             title : "修改菜单",
             type : 2,
-            area: ['400px', '560px'],
+            area: ['400px', '600px'],
             content : [href,"no"],
             success : function(layero, index){
                 setTimeout(function(){

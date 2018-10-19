@@ -7,6 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+namespace PHPUnit\Framework\Constraint;
+
+use ReflectionClass;
 
 /**
  * Constraint that asserts that the class it is evaluated for has a given
@@ -14,39 +17,35 @@
  *
  * The attribute name is passed in the constructor.
  */
-class PHPUnit_Framework_Constraint_ClassHasStaticAttribute extends PHPUnit_Framework_Constraint_ClassHasAttribute
+class ClassHasStaticAttribute extends ClassHasAttribute
 {
+    /**
+     * Returns a string representation of the constraint.
+     */
+    public function toString(): string
+    {
+        return \sprintf(
+            'has static attribute "%s"',
+            $this->attributeName()
+        );
+    }
+
     /**
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param mixed $other Value or object to evaluate.
-     *
-     * @return bool
+     * @param mixed $other value or object to evaluate
      */
-    protected function matches($other)
+    protected function matches($other): bool
     {
         $class = new ReflectionClass($other);
 
-        if ($class->hasProperty($this->attributeName)) {
-            $attribute = $class->getProperty($this->attributeName);
+        if ($class->hasProperty($this->attributeName())) {
+            $attribute = $class->getProperty($this->attributeName());
 
             return $attribute->isStatic();
-        } else {
-            return false;
         }
-    }
 
-    /**
-     * Returns a string representation of the constraint.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return sprintf(
-            'has static attribute "%s"',
-            $this->attributeName
-        );
+        return false;
     }
 }

@@ -1,3 +1,17 @@
+layui.config({
+	base : "js/"
+}).use(['form','layer','jquery'],function(){
+	var form = layui.form,
+		layer = parent.layer === undefined ? layui.layer : parent.layer,
+		$ = layui.jquery;
+		var url = 'https://admin.alilinet.com/tools/ico';
+		
+		$('.open-icon').click(function(){
+			layer.open({title:'图标选择', type: 2, area: ['800px', '530px'], fix: true, maxmin: false, content: url});
+		});
+		
+});
+
 $('#parent_name').autocomplete({
     source: function (request, response) {
         var result = [];

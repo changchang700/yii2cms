@@ -6,7 +6,6 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\helpers\ArrayHelper;
-use yii\filters\RateLimitInterface;
 
 /**
  * This is the model class for table "t_user".
@@ -34,7 +33,7 @@ use yii\filters\RateLimitInterface;
  * @property integer $updated_at
  */
 
-class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
+class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
@@ -105,23 +104,6 @@ class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
 		}
     }
 
-	
-    // 返回某一时间允许请求的最大数量，比如设置10秒内最多5次请求（小数量方便我们模拟测试）
-    public  function getRateLimit($request, $action){  
-         return [5, 10];  
-    }
-     
-    // 回剩余的允许的请求和相应的UNIX时间戳数 当最后一次速率限制检查时
-    public  function loadAllowance($request, $action){  
-         return [$this->allowance, $this->allowance_updated_at];  
-    }  
-     
-    // 保存允许剩余的请求数和当前的UNIX时间戳
-    public  function saveAllowance($request, $action, $allowance, $timestamp){ 
-        $this->allowance = $allowance;  
-        $this->allowance_updated_at = $timestamp;  
-        $this->save();  
-    }  
     /**
      * Finds user by username
      *

@@ -3,6 +3,7 @@ namespace backend\controllers;
 
 use yii\web\Controller;
 use common\models\Config;
+
 class ToolsController extends Controller
 {
 	/**
@@ -46,4 +47,7 @@ class ToolsController extends Controller
         move_uploaded_file($file_tmp_path, $dir.'/'.$file_save_name);
         echo json_encode(array("code"=>"200","data"=>Config::findOne(['name'=>'WEB_SITE_RESOURCES_URL'])->value . date('Ymd').'/'.$file_save_name));
     }
+	public function actionIco(){
+		return $this->render('ico');
+	}
 }

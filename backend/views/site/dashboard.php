@@ -40,7 +40,7 @@ LayuiAsset::addScript($this, "@web/js/index.js");
 		</div>
 		<div class="panel col">
 			<a href="javascript:;" data-url="page/message/message.html">
-				<div class="panel_icon" style="background-color: #18c858;">
+				<div class=yle="background-color: #18c858;">
 					<i class="iconfont" data-icon="&#xe672;">&#xe672;</i>
 				</div>
 				<div class="panel_word newMessage">

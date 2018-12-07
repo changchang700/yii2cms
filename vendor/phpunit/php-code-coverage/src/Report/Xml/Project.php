@@ -7,51 +7,46 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace SebastianBergmann\CodeCoverage\Report\Xml;
 
-final class Project extends Node
+class Project extends Node
 {
-    public function __construct(string $directory)
+    public function __construct($name)
     {
         $this->init();
-        $this->setProjectSourceDirectory($directory);
+        $this->setProjectName($name);
     }
 
-    public function getProjectSourceDirectory(): string
+    private function init()
     {
-        return $this->getContextNode()->getAttribute('source');
+        $dom = new \DOMDocument;
+        $dom->loadXML('<?xml version="1.0" ?><phpunit xmlns="http://schema.phpunit.de/coverage/1.0"><project/></phpunit>');
+
+        $this->setContextNode(
+            $dom->getElementsByTagNameNS(
+                'http://schema.phpunit.de/coverage/1.0',
+                'project'
+            )->item(0)
+        );
     }
 
-    public function getBuildInformation(): BuildInformation
+    private function setProjectName($name)
     {
-        $buildNode = $this->getDom()->getElementsByTagNameNS(
-            'https://schema.phpunit.de/coverage/1.0',
-            'build'
-        )->item(0);
-
-        if (!$buildNode) {
-            $buildNode = $this->getDom()->documentElement->appendChild(
-                $this->getDom()->createElementNS(
-                    'https://schema.phpunit.de/coverage/1.0',
-                    'build'
-                )
-            );
-        }
-
-        return new BuildInformation($buildNode);
+        $this->getContextNode()->setAttribute('name', $name);
     }
 
-    public function getTests(): Tests
+    public function getTests()
     {
         $testsNode = $this->getContextNode()->getElementsByTagNameNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'http://schema.phpunit.de/coverage/1.0',
             'tests'
         )->item(0);
 
         if (!$testsNode) {
             $testsNode = $this->getContextNode()->appendChild(
                 $this->getDom()->createElementNS(
-                    'https://schema.phpunit.de/coverage/1.0',
+                    'http://schema.phpunit.de/coverage/1.0',
                     'tests'
                 )
             );
@@ -60,26 +55,8 @@ final class Project extends Node
         return new Tests($testsNode);
     }
 
-    public function asDom(): \DOMDocument
+    public function asDom()
     {
         return $this->getDom();
-    }
-
-    private function init(): void
-    {
-        $dom = new \DOMDocument;
-        $dom->loadXML('<?xml version="1.0" ?><phpunit xmlns="https://schema.phpunit.de/coverage/1.0"><build/><project/></phpunit>');
-
-        $this->setContextNode(
-            $dom->getElementsByTagNameNS(
-                'https://schema.phpunit.de/coverage/1.0',
-                'project'
-            )->item(0)
-        );
-    }
-
-    private function setProjectSourceDirectory(string $name): void
-    {
-        $this->getContextNode()->setAttribute('source', $name);
     }
 }

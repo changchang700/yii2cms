@@ -154,6 +154,11 @@ $I->haveInRepository('Entity\User', array('name' => 'davert'));
 ```
 
 
+### onReconfigure
+ 
+@throws ModuleConfigException
+
+
 ### persistEntity
  
 Adds entity to repository and flushes. You can redefine it's properties with the second parameter.

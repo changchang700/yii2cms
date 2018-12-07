@@ -7,11 +7,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace SebastianBergmann\CodeCoverage\Report\Xml;
 
 use SebastianBergmann\CodeCoverage\Util;
 
-final class Totals
+class Totals
 {
     /**
      * @var \DOMNode
@@ -49,27 +50,27 @@ final class Totals
         $dom             = $container->ownerDocument;
 
         $this->linesNode = $dom->createElementNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'http://schema.phpunit.de/coverage/1.0',
             'lines'
         );
 
         $this->methodsNode = $dom->createElementNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'http://schema.phpunit.de/coverage/1.0',
             'methods'
         );
 
         $this->functionsNode = $dom->createElementNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'http://schema.phpunit.de/coverage/1.0',
             'functions'
         );
 
         $this->classesNode = $dom->createElementNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'http://schema.phpunit.de/coverage/1.0',
             'classes'
         );
 
         $this->traitsNode = $dom->createElementNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'http://schema.phpunit.de/coverage/1.0',
             'traits'
         );
 
@@ -80,12 +81,12 @@ final class Totals
         $container->appendChild($this->traitsNode);
     }
 
-    public function getContainer(): \DOMNode
+    public function getContainer()
     {
         return $this->container;
     }
 
-    public function setNumLines(int $loc, int $cloc, int $ncloc, int $executable, int $executed): void
+    public function setNumLines($loc, $cloc, $ncloc, $executable, $executed)
     {
         $this->linesNode->setAttribute('total', $loc);
         $this->linesNode->setAttribute('comments', $cloc);
@@ -94,47 +95,47 @@ final class Totals
         $this->linesNode->setAttribute('executed', $executed);
         $this->linesNode->setAttribute(
             'percent',
-            $executable === 0 ? 0 : \sprintf('%01.2F', Util::percent($executed, $executable))
+            Util::percent($executed, $executable, true)
         );
     }
 
-    public function setNumClasses(int $count, int $tested): void
+    public function setNumClasses($count, $tested)
     {
         $this->classesNode->setAttribute('count', $count);
         $this->classesNode->setAttribute('tested', $tested);
         $this->classesNode->setAttribute(
             'percent',
-            $count === 0 ? 0 : \sprintf('%01.2F', Util::percent($tested, $count))
+            Util::percent($tested, $count, true)
         );
     }
 
-    public function setNumTraits(int $count, int $tested): void
+    public function setNumTraits($count, $tested)
     {
         $this->traitsNode->setAttribute('count', $count);
         $this->traitsNode->setAttribute('tested', $tested);
         $this->traitsNode->setAttribute(
             'percent',
-            $count === 0 ? 0 : \sprintf('%01.2F', Util::percent($tested, $count))
+            Util::percent($tested, $count, true)
         );
     }
 
-    public function setNumMethods(int $count, int $tested): void
+    public function setNumMethods($count, $tested)
     {
         $this->methodsNode->setAttribute('count', $count);
         $this->methodsNode->setAttribute('tested', $tested);
         $this->methodsNode->setAttribute(
             'percent',
-            $count === 0 ? 0 : \sprintf('%01.2F', Util::percent($tested, $count))
+            Util::percent($tested, $count, true)
         );
     }
 
-    public function setNumFunctions(int $count, int $tested): void
+    public function setNumFunctions($count, $tested)
     {
         $this->functionsNode->setAttribute('count', $count);
         $this->functionsNode->setAttribute('tested', $tested);
         $this->functionsNode->setAttribute(
             'percent',
-            $count === 0 ? 0 : \sprintf('%01.2F', Util::percent($tested, $count))
+            Util::percent($tested, $count, true)
         );
     }
 }

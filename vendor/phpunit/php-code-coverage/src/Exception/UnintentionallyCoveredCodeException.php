@@ -7,18 +7,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace SebastianBergmann\CodeCoverage;
 
 /**
  * Exception that is raised when code is unintentionally covered.
  */
-final class UnintentionallyCoveredCodeException extends RuntimeException
+class UnintentionallyCoveredCodeException extends RuntimeException
 {
     /**
      * @var array
      */
     private $unintentionallyCoveredUnits = [];
 
+    /**
+     * @param array $unintentionallyCoveredUnits
+     */
     public function __construct(array $unintentionallyCoveredUnits)
     {
         $this->unintentionallyCoveredUnits = $unintentionallyCoveredUnits;
@@ -26,12 +30,18 @@ final class UnintentionallyCoveredCodeException extends RuntimeException
         parent::__construct($this->toString());
     }
 
-    public function getUnintentionallyCoveredUnits(): array
+    /**
+     * @return array
+     */
+    public function getUnintentionallyCoveredUnits()
     {
         return $this->unintentionallyCoveredUnits;
     }
 
-    private function toString(): string
+    /**
+     * @return string
+     */
+    private function toString()
     {
         $message = '';
 

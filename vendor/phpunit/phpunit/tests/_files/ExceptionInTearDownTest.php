@@ -1,50 +1,35 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\Framework\TestCase;
-
-class ExceptionInTearDownTest extends TestCase
+class ExceptionInTearDownTest extends PHPUnit_Framework_TestCase
 {
     public $setUp                = false;
-
     public $assertPreConditions  = false;
-
     public $assertPostConditions = false;
-
     public $tearDown             = false;
-
     public $testSomething        = false;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->setUp = true;
     }
 
-    protected function tearDown(): void
-    {
-        $this->tearDown = true;
-
-        throw new Exception;
-    }
-
-    public function testSomething(): void
-    {
-        $this->testSomething = true;
-    }
-
-    protected function assertPreConditions(): void
+    protected function assertPreConditions()
     {
         $this->assertPreConditions = true;
     }
 
-    protected function assertPostConditions(): void
+    public function testSomething()
+    {
+        $this->testSomething = true;
+    }
+
+    protected function assertPostConditions()
     {
         $this->assertPostConditions = true;
+    }
+
+    protected function tearDown()
+    {
+        $this->tearDown = true;
+        throw new Exception;
     }
 }

@@ -12,7 +12,7 @@ class Report extends ResultPrinter implements ConsolePrinter
      * @param \PHPUnit\Framework\Test $test
      * @param float $time
      */
-    public function endTest(\PHPUnit\Framework\Test $test, float $time) : void
+    public function endTest(\PHPUnit\Framework\Test $test, $time)
     {
         $name = Descriptor::getTestAsString($test);
         $success = ($this->testStatus == \PHPUnit\Runner\BaseTestRunner::STATUS_PASSED);
@@ -41,7 +41,7 @@ class Report extends ResultPrinter implements ConsolePrinter
         $this->write($line . "\n");
     }
 
-    protected function endRun() : void
+    protected function endRun()
     {
         $this->write("\nCodeception Results\n");
         $this->write(sprintf(
@@ -57,8 +57,8 @@ class Report extends ResultPrinter implements ConsolePrinter
     {
     }
 
-    public function write(string $buffer) : void
+    public function write($buffer)
     {
-        parent::write($buffer);
+
     }
 }

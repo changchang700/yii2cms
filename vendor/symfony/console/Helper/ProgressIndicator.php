@@ -39,7 +39,7 @@ class ProgressIndicator
      * @param int             $indicatorChangeInterval Change interval in milliseconds
      * @param array|null      $indicatorValues         Animated indicator characters
      */
-    public function __construct(OutputInterface $output, string $format = null, int $indicatorChangeInterval = 100, array $indicatorValues = null)
+    public function __construct(OutputInterface $output, $format = null, $indicatorChangeInterval = 100, $indicatorValues = null)
     {
         $this->output = $output;
 
@@ -219,8 +219,10 @@ class ProgressIndicator
 
     /**
      * Overwrites a previous message to the output.
+     *
+     * @param string $message The message
      */
-    private function overwrite(string $message)
+    private function overwrite($message)
     {
         if ($this->output->isDecorated()) {
             $this->output->write("\x0D\x1B[2K");

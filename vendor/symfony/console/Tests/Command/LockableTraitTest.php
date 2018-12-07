@@ -41,7 +41,7 @@ class LockableTraitTest extends TestCase
     {
         $command = new \FooLockCommand();
 
-        if (SemaphoreStore::isSupported()) {
+        if (SemaphoreStore::isSupported(false)) {
             $store = new SemaphoreStore();
         } else {
             $store = new FlockStore();

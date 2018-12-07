@@ -28,7 +28,7 @@ class UserController extends ActiveController
 		$model = new LoginForm;
 		$model->setAttributes(Yii::$app->request->post());
         if ($model->login()) {
-            return ['access_token' => $model->login()];
+            return ['access-token' => $model->login()];
         }
         else {
             $model->validate();

@@ -2,7 +2,6 @@
 /.idea
 /.php_cs
 /.php_cs.cache
-/.phpunit.result.cache
 /build/documentation
 /build/logfiles
 /build/phar
@@ -12,9 +11,10 @@
 /build/binary-phar-autoload.php
 /cache.properties
 /composer.lock
-/tests/end-to-end/*.diff
-/tests/end-to-end/*.exp
-/tests/end-to-end/*.log
-/tests/end-to-end/*.out
-/tests/end-to-end/*.php
+/tests/TextUI/*.diff
+/tests/TextUI/*.exp
+/tests/TextUI/*.log
+/tests/TextUI/*.out
+/tests/TextUI/*.php
 /vendor
+

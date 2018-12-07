@@ -74,6 +74,17 @@ use Codeception\Util\ActionSequence;
  *              ssl_verify_server_cert: false
  *              ssl_cipher: 'AES256-SHA'
  *
+ * ## Example with multi-dumps
+ *     modules:
+ *          enabled:
+ *             - Db:
+ *                dsn: 'mysql:host=localhost;dbname=testdb'
+ *                user: 'root'
+ *                password: ''
+ *                dump:
+ *                   - 'tests/_data/dump.sql'
+ *                   - 'tests/_data/dump-2.sql'
+ *
  * ## Example with multi-databases
  *
  *     modules:
@@ -224,7 +235,13 @@ class Db extends CodeceptionModule implements DbInterface
     protected $requiredFields = ['dsn', 'user', 'password'];
     const DEFAULT_DATABASE = 'default';
 
+    /**
+     * @var Driver[]
+     */
     public $drivers = [];
+    /**
+     * @var \PDO[]
+     */
     public $dbhs = [];
     public $databasesPopulated = [];
     public $databasesSql = [];
@@ -265,6 +282,13 @@ class Db extends CodeceptionModule implements DbInterface
     {
         foreach ($this->getDatabases() as $databaseKey => $databaseConfig) {
             if ($databaseConfig[$configKey]) {
+                if (!$databaseConfig['populate']) {
+                    return;
+                }
+
+                if (isset($this->databasesPopulated[$databaseKey]) && $this->databasesPopulated[$databaseKey]) {
+                    return;
+                }
                 $this->_loadDump($databaseKey, $databaseConfig);
             }
         }
@@ -279,20 +303,20 @@ class Db extends CodeceptionModule implements DbInterface
     {
         foreach ($this->getDatabases() as $databaseKey => $databaseConfig) {
             $this->amConnectedToDatabase($databaseKey);
-            $this->removeInserted($databaseKey, $databaseConfig);
+            $this->removeInserted($databaseKey);
         }
     }
     protected function disconnectDatabases()
     {
         foreach ($this->getDatabases() as $databaseKey => $databaseConfig) {
-            $this->disconnect($databaseKey, $databaseConfig);
+            $this->disconnect($databaseKey);
         }
     }
     protected function reconnectDatabases()
     {
         foreach ($this->getDatabases() as $databaseKey => $databaseConfig) {
             if ($databaseConfig['reconnect']) {
-                $this->disconnect($databaseKey, $databaseConfig);
+                $this->disconnect($databaseKey);
                 $this->connect($databaseKey, $databaseConfig);
             }
         }
@@ -310,6 +334,9 @@ class Db extends CodeceptionModule implements DbInterface
         }
     }
 
+    /**
+     * @return Driver
+     */
     public function _getDriver()
     {
         return $this->drivers[$this->currentDatabase];
@@ -374,7 +401,7 @@ class Db extends CodeceptionModule implements DbInterface
      * exception on failure.
      *
      * @param $databaseKey
-     * @param actions $actions
+     * @param \Codeception\Util\ActionSequence|array|callable $actions
      * @throws ModuleConfigException
      */
     public function performInDatabase($databaseKey, $actions)
@@ -429,24 +456,45 @@ class Db extends CodeceptionModule implements DbInterface
             return;
         }
 
-        if (!file_exists(Configuration::projectDir() . $databaseConfig['dump'])) {
-            throw new ModuleConfigException(
-                __CLASS__,
-                "\nFile with dump doesn't exist.\n"
-                . "Please, check path for sql file: "
-                . $databaseConfig['dump']
-            );
+        if (!is_array($databaseConfig['dump'])) {
+            $databaseConfig['dump'] = [$databaseConfig['dump']];
         }
 
-        $sql = file_get_contents(Configuration::projectDir() . $databaseConfig['dump']);
+        $sql = '';
 
-        // remove C-style comments (except MySQL directives)
-        $sql = preg_replace('%/\*(?!!\d+).*?\*/%s', '', $sql);
+        foreach ($databaseConfig['dump'] as $filePath) {
+            $sql .= $this->readSqlFile($filePath);
+        }
 
         if (!empty($sql)) {
             // split SQL dump into lines
             $this->databasesSql[$databaseKey] = preg_split('/\r\n|\n|\r/', $sql, -1, PREG_SPLIT_NO_EMPTY);
         }
+    }
+
+    /**
+     * @param $filePath
+     *
+     * @return bool|null|string|string[]
+     * @throws \Codeception\Exception\ModuleConfigException
+     */
+    private function readSqlFile($filePath)
+    {
+        if (!file_exists(Configuration::projectDir() . $filePath)) {
+            throw new ModuleConfigException(
+                __CLASS__,
+                "\nFile with dump doesn't exist.\n"
+                . "Please, check path for sql file: "
+                . $filePath
+            );
+        }
+
+        $sql = file_get_contents(Configuration::projectDir() . $filePath);
+
+        // remove C-style comments (except MySQL directives)
+        $sql = preg_replace('%/\*(?!!\d+).*?\*/%s', '', $sql);
+
+        return $sql;
     }
 
     private function connect($databaseKey, $databaseConfig)
@@ -495,6 +543,7 @@ class Db extends CodeceptionModule implements DbInterface
         }
 
         try {
+            $this->debugSection('Connecting To Db', ['config' => $databaseConfig, 'options' => $options]);
             $this->drivers[$databaseKey] = Driver::create($databaseConfig['dsn'], $databaseConfig['user'], $databaseConfig['password'], $options);
         } catch (\PDOException $e) {
             $message = $e->getMessage();
@@ -507,7 +556,7 @@ class Db extends CodeceptionModule implements DbInterface
         }
 
         if ($databaseConfig['waitlock']) {
-            $this->__getDriver()->setWaitLock($databaseConfig['waitlock']);
+            $this->_getDriver()->setWaitLock($databaseConfig['waitlock']);
         }
 
         $this->debugSection('Db', 'Connected to ' . $databaseKey . ' ' . $this->drivers[$databaseKey]->getDb());
@@ -600,19 +649,11 @@ class Db extends CodeceptionModule implements DbInterface
         $databaseKey = empty($databaseKey) ?  self::DEFAULT_DATABASE : $databaseKey;
         $databaseConfig = empty($databaseConfig) ?  $this->config : $databaseConfig;
 
-        if (!$databaseConfig['populate']) {
-            return;
-        }
-
-        if (isset($this->databasesPopulated[$databaseKey]) && $this->databasesPopulated[$databaseKey]) {
-            return;
-        }
-
         if ($databaseConfig['populator']) {
             $this->loadDumpUsingPopulator($databaseKey, $databaseConfig);
             return;
         }
-        $this->loadDumpUsingDriver($databaseKey, $databaseConfig);
+        $this->loadDumpUsingDriver($databaseKey);
     }
 
     protected function loadDumpUsingPopulator($databaseKey, $databaseConfig)
@@ -671,6 +712,7 @@ class Db extends CodeceptionModule implements DbInterface
             // ignore errors due to uncommon DB structure,
             // such as tables without _id_seq in PGSQL
             $lastInsertId = 0;
+            $this->debugSection('DB error', $e->getMessage());
         }
         return $lastInsertId;
     }

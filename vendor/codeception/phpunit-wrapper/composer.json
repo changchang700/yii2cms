@@ -9,11 +9,15 @@
             "email": "davert.php@resend.cc"
         }
     ],
+    "replace": {
+        "codeception/phpunit-wrapper": "*"
+    },
     "require": {
-        "phpunit/phpunit": "~7.1.0|~7.2.0|~7.3.0",
-        "phpunit/php-code-coverage": "^6.0",
-        "sebastian/comparator": "^3.0",
-        "sebastian/diff": "^3.0"
+        "phpunit/phpunit": ">=5.7.27 <7.0",
+        "phpunit/php-code-coverage": ">=4.0.4 <6.0",
+        "sebastian/comparator": ">=1.2.4 <3.0",
+        "sebastian/diff": ">=1.4 <4.0"
+
     },
     "autoload":{
         "psr-4":{

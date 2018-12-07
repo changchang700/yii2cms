@@ -11,10 +11,10 @@ class ResultPrinter extends \PHPUnit\Util\TestDox\ResultPrinter
      * An error occurred.
      *
      * @param \PHPUnit\Framework\Test $test
-     * @param \Throwable $e
+     * @param \Exception $e
      * @param float $time
      */
-    public function addError(\PHPUnit\Framework\Test $test, \Throwable $e, float $time) : void
+    public function addError(\PHPUnit\Framework\Test $test, \Exception $e, $time)
     {
         $this->testStatus = \PHPUnit\Runner\BaseTestRunner::STATUS_ERROR;
         $this->failed++;
@@ -27,7 +27,7 @@ class ResultPrinter extends \PHPUnit\Util\TestDox\ResultPrinter
      * @param \PHPUnit\Framework\AssertionFailedError $e
      * @param float $time
      */
-    public function addFailure(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\AssertionFailedError $e, float $time) : void
+    public function addFailure(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\AssertionFailedError $e, $time)
     {
         $this->testStatus = \PHPUnit\Runner\BaseTestRunner::STATUS_FAILURE;
         $this->failed++;
@@ -40,20 +40,20 @@ class ResultPrinter extends \PHPUnit\Util\TestDox\ResultPrinter
      * @param \PHPUnit\Framework\Warning $e
      * @param float $time
      */
-    public function addWarning(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\Warning $e, float $time): void
-    {
+     public function addWarning(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\Warning $e, $time)
+     {
         $this->testStatus = \PHPUnit\Runner\BaseTestRunner::STATUS_WARNING;
         $this->warned++;
-    }
+     }
 
     /**
      * Incomplete test.
      *
      * @param \PHPUnit\Framework\Test $test
-     * @param \Throwable $e
+     * @param \Exception $e
      * @param float $time
      */
-    public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Throwable $e, float $time) : void
+    public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
     {
         $this->testStatus = \PHPUnit\Runner\BaseTestRunner::STATUS_INCOMPLETE;
         $this->incomplete++;
@@ -63,12 +63,12 @@ class ResultPrinter extends \PHPUnit\Util\TestDox\ResultPrinter
      * Risky test.
      *
      * @param \PHPUnit\Framework\Test $test
-     * @param \Throwable $e
+     * @param \Exception $e
      * @param float $time
      *
      * @since  Method available since Release 4.0.0
      */
-    public function addRiskyTest(\PHPUnit\Framework\Test $test, \Throwable $e, float $time) : void
+    public function addRiskyTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
     {
         $this->testStatus = \PHPUnit\Runner\BaseTestRunner::STATUS_RISKY;
         $this->risky++;
@@ -78,18 +78,18 @@ class ResultPrinter extends \PHPUnit\Util\TestDox\ResultPrinter
      * Skipped test.
      *
      * @param \PHPUnit\Framework\Test $test
-     * @param \Throwable $e
+     * @param \Exception $e
      * @param float $time
      *
      * @since  Method available since Release 3.0.0
      */
-    public function addSkippedTest(\PHPUnit\Framework\Test $test, \Throwable $e, float $time) : void
+    public function addSkippedTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
     {
         $this->testStatus = \PHPUnit\Runner\BaseTestRunner::STATUS_SKIPPED;
         $this->skipped++;
     }
 
-    public function startTest(\PHPUnit\Framework\Test $test) : void
+    public function startTest(\PHPUnit\Framework\Test $test)
     {
         $this->testStatus = \PHPUnit\Runner\BaseTestRunner::STATUS_PASSED;
     }

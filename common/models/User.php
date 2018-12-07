@@ -103,7 +103,18 @@ class User extends ActiveRecord implements IdentityInterface
 			return null;
 		}
     }
-
+	/**
+     * @inheritdoc
+     */
+    public static function loginByAccessToken($token, $type = null)
+    {
+		$user = static::find()->where(['access_token'=>$token , 'status' => self::STATUS_ACTIVE])->one();
+		if($user){
+			return $user;
+		}else{
+			return null;
+		}
+    }
     /**
      * Finds user by username
      *

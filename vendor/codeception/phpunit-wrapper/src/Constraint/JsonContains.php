@@ -28,7 +28,7 @@ class JsonContains extends \PHPUnit\Framework\Constraint\Constraint
      *
      * @return bool
      */
-    protected function matches($other) : bool
+    protected function matches($other)
     {
         $jsonResponseArray = new JsonArray($other);
         if (!is_array($jsonResponseArray->toArray())) {
@@ -49,8 +49,6 @@ class JsonContains extends \PHPUnit\Framework\Constraint\Constraint
                 $failure
             );
         }
-
-        return false;
     }
 
     /**
@@ -58,13 +56,13 @@ class JsonContains extends \PHPUnit\Framework\Constraint\Constraint
      *
      * @return string
      */
-    public function toString() : string
+    public function toString()
     {
         //unused
         return '';
     }
 
-    protected function failureDescription($other) : string
+    protected function failureDescription($other)
     {
         //unused
         return '';

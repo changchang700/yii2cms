@@ -382,21 +382,21 @@ class InputDefinition
             $elements[] = '[--]';
         }
 
-        $tail = '';
         foreach ($this->getArguments() as $argument) {
             $element = '<'.$argument->getName().'>';
-            if ($argument->isArray()) {
-                $element .= '...';
+            if (!$argument->isRequired()) {
+                $element = '['.$element.']';
+            } elseif ($argument->isArray()) {
+                $element .= ' ('.$element.')';
             }
 
-            if (!$argument->isRequired()) {
-                $element = '['.$element;
-                $tail .= ']';
+            if ($argument->isArray()) {
+                $element .= '...';
             }
 
             $elements[] = $element;
         }
 
-        return implode(' ', $elements).$tail;
+        return implode(' ', $elements);
     }
 }

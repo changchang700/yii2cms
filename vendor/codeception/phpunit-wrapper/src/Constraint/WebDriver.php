@@ -9,7 +9,7 @@ use SebastianBergmann\Comparator\ComparisonFailure;
 class WebDriver extends Page
 {
 
-    protected function matches($nodes) : bool
+    protected function matches($nodes)
     {
         if (!count($nodes)) {
             return false;
@@ -30,7 +30,7 @@ class WebDriver extends Page
         return false;
     }
 
-    protected function fail($nodes, $selector, ComparisonFailure $comparisonFailure = null) : void
+    protected function fail($nodes, $selector, ComparisonFailure $comparisonFailure = null)
     {
         if (!count($nodes)) {
             throw new ElementNotFound($selector, 'Element located either by name, CSS or XPath');
@@ -54,7 +54,7 @@ class WebDriver extends Page
         );
     }
 
-    protected function failureDescription($nodes) : string
+    protected function failureDescription($nodes)
     {
         $desc = '';
         foreach ($nodes as $node) {

@@ -3,7 +3,6 @@ namespace Codeception\PHPUnit;
 
 use Codeception\Configuration;
 use Codeception\Exception\ConfigurationException;
-use PHPUnit\Framework\TestSuite;
 
 class Runner extends \PHPUnit\TextUI\TestRunner
 {
@@ -46,11 +45,8 @@ class Runner extends \PHPUnit\TextUI\TestRunner
     {
         $this->handleConfiguration($arguments);
 
-        $filterAdded = false;
-
         $filterFactory = new \PHPUnit\Runner\Filter\Factory();
         if ($arguments['groups']) {
-            $filterAdded = true;
             $filterFactory->addFilter(
                 new \ReflectionClass('PHPUnit\Runner\Filter\IncludeGroupFilterIterator'),
                 $arguments['groups']
@@ -58,7 +54,6 @@ class Runner extends \PHPUnit\TextUI\TestRunner
         }
 
         if ($arguments['excludeGroups']) {
-            $filterAdded = true;
             $filterFactory->addFilter(
                 new \ReflectionClass('PHPUnit\Runner\Filter\ExcludeGroupFilterIterator'),
                 $arguments['excludeGroups']
@@ -66,16 +61,13 @@ class Runner extends \PHPUnit\TextUI\TestRunner
         }
 
         if ($arguments['filter']) {
-            $filterAdded = true;
             $filterFactory->addFilter(
                 new \ReflectionClass('Codeception\PHPUnit\FilterTest'),
                 $arguments['filter']
             );
         }
 
-        if ($filterAdded) {
-            $suite->injectFilter($filterFactory);
-        }
+        $suite->injectFilter($filterFactory);
     }
 
     public function doEnhancedRun(

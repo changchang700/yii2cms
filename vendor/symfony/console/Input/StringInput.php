@@ -30,7 +30,7 @@ class StringInput extends ArgvInput
     /**
      * @param string $input A string representing the parameters from the CLI
      */
-    public function __construct(string $input)
+    public function __construct($input)
     {
         parent::__construct(array());
 

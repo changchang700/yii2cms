@@ -42,10 +42,10 @@ Conflicts with SOAP module
 ### amAWSAuthenticated
  
 Allows to send REST request using AWS Authorization
-Only works with PhpBrowser
-Example
-Config -
 
+Only works with PhpBrowser
+Example Config:
+```yml
 modules:
      enabled:
          - REST:
@@ -54,7 +54,8 @@ modules:
                  secret: accessSecret
                  service: awsService
                  region: awsRegion
-
+```
+Code:
 ```php
 <?php
 $I->amAWSAuthenticated();

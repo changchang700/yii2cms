@@ -1,34 +1,21 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\Framework\TestCase;
-
-class DependencySuccessTest extends TestCase
+class DependencySuccessTest extends PHPUnit_Framework_TestCase
 {
-    public function testOne(): void
+    public function testOne()
     {
-        $this->assertTrue(true);
     }
 
     /**
      * @depends testOne
      */
-    public function testTwo(): void
+    public function testTwo()
     {
-        $this->assertTrue(true);
     }
 
     /**
      * @depends DependencySuccessTest::testTwo
      */
-    public function testThree(): void
+    public function testThree()
     {
-        $this->assertTrue(true);
     }
 }

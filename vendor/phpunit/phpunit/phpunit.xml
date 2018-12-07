@@ -2,15 +2,19 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="phpunit.xsd"
          bootstrap="tests/bootstrap.php"
-         cacheResult="true"
+         backupGlobals="false"
          verbose="true">
     <testsuites>
-        <testsuite name="unit">
-            <directory suffix="Test.php">tests/unit</directory>
+        <testsuite name="small">
+            <directory suffix="Test.php">tests/Framework</directory>
+            <directory suffix="Test.php">tests/Extensions</directory>
+            <directory suffix="Test.php">tests/Runner</directory>
+            <directory suffix="Test.php">tests/Util</directory>
         </testsuite>
 
-        <testsuite name="end-to-end">
-            <directory suffix=".phpt">tests/end-to-end</directory>
+        <testsuite name="large">
+            <directory suffix=".phpt">tests/TextUI</directory>
+            <directory suffix=".phpt">tests/Regression</directory>
         </testsuite>
     </testsuites>
 

@@ -1,20 +1,10 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\Framework\TestCase;
-
-class CoverageNotPrivateTest extends TestCase
+class CoverageNotPrivateTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @covers CoveredClass::<!private>
      */
-    public function testSomething(): void
+    public function testSomething()
     {
         $o = new CoveredClass;
         $o->publicMethod();

@@ -5,12 +5,12 @@ use SebastianBergmann\Comparator\ComparisonFailure;
 
 class CrawlerNot extends Crawler
 {
-    protected function matches($nodes) : bool
+    protected function matches($nodes)
     {
         return !parent::matches($nodes);
     }
 
-    protected function fail($nodes, $selector, ComparisonFailure $comparisonFailure = null) : void
+    protected function fail($nodes, $selector, ComparisonFailure $comparisonFailure = null)
     {
         if (!$this->string) {
             throw new \PHPUnit\Framework\ExpectationFailedException(
@@ -31,7 +31,7 @@ class CrawlerNot extends Crawler
         );
     }
 
-    public function toString() : string
+    public function toString()
     {
         if ($this->string) {
             return 'that contains text "' . $this->string . '"';

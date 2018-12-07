@@ -42,14 +42,6 @@
     </target>
 
     <target name="install-dependencies" unless="dependencies-installed" depends="-dependencies-installed,validate-composer-json" description="Install dependencies with Composer">
-        <copy file="${basedir}/composer.json" tofile="${basedir}/composer.json.bak"/>
-
-        <exec executable="${basedir}/build/tools/composer" taskname="composer">
-            <arg value="require"/>
-            <arg value="--no-update"/>
-            <arg value="phpunit/php-invoker:^2.0"/>
-        </exec>
-
         <exec executable="${basedir}/build/tools/composer" taskname="composer">
             <arg value="update"/>
             <arg value="--no-interaction"/>
@@ -57,8 +49,6 @@
             <arg value="--no-ansi"/>
             <arg value="--no-suggest"/>
         </exec>
-
-        <move file="${basedir}/composer.json.bak" tofile="${basedir}/composer.json"/>
     </target>
 
     <target name="php-syntax-check" unless="php-syntax-check.done" description="Perform syntax check on PHP files">
@@ -124,10 +114,18 @@
 
     <target name="-phar-prepare" depends="clean,install-dependencies">
         <mkdir dir="${basedir}/build/phar"/>
+        <copy file="${basedir}/composer.json" tofile="${basedir}/composer.json.bak"/>
 
-        <copy file="${basedir}/phpunit.xsd" tofile="${basedir}/build/phar/phpunit.xsd"/>
+        <exec executable="${basedir}/build/tools/composer">
+            <arg value="require"/>
+            <arg value="phpunit/dbunit:~2.0"/>
+            <arg value="phpunit/php-invoker:~1.1"/>
+        </exec>
 
-        <exec executable="${basedir}/build/phar-manifest.php" output="${basedir}/build/phar/manifest.txt" failonerror="true"/>
+        <move file="${basedir}/composer.json.bak" tofile="${basedir}/composer.json"/>
+
+        <exec executable="${basedir}/build/phar-manifest.php" output="${basedir}/build/phar/manifest.txt"/>
+        <copy todir="${basedir}/build/phar" file="${basedir}/build/ca.pem" />
 
         <copy file="${basedir}/vendor/phpunit/php-code-coverage/LICENSE" tofile="${basedir}/build/phar/php-code-coverage/LICENSE"/>
         <copy todir="${basedir}/build/phar/php-code-coverage">
@@ -161,6 +159,13 @@
         <copy todir="${basedir}/build/phar/php-token-stream">
             <fileset dir="${basedir}/vendor/phpunit/php-token-stream/src">
                 <include name="**/*.php" />
+            </fileset>
+        </copy>
+
+        <copy file="${basedir}/vendor/phpunit/phpunit-mock-objects/LICENSE" tofile="${basedir}/build/phar/phpunit-mock-objects/LICENSE"/>
+        <copy todir="${basedir}/build/phar/phpunit-mock-objects">
+            <fileset dir="${basedir}/vendor/phpunit/phpunit-mock-objects/src">
+                <include name="**/*" />
             </fileset>
         </copy>
 
@@ -227,13 +232,6 @@
             </fileset>
         </copy>
 
-        <copy file="${basedir}/vendor/sebastian/object-reflector/LICENSE" tofile="${basedir}/build/phar/object-reflector/LICENSE"/>
-        <copy todir="${basedir}/build/phar/sebastian-object-reflector">
-            <fileset dir="${basedir}/vendor/sebastian/object-reflector/src">
-                <include name="**/*.php" />
-            </fileset>
-        </copy>
-
         <copy file="${basedir}/vendor/sebastian/version/LICENSE" tofile="${basedir}/build/phar/sebastian-version/LICENSE"/>
         <copy todir="${basedir}/build/phar/sebastian-version">
             <fileset dir="${basedir}/vendor/sebastian/version/src">
@@ -244,6 +242,21 @@
         <copy file="${basedir}/vendor/doctrine/instantiator/LICENSE" tofile="${basedir}/build/phar/doctrine-instantiator/LICENSE"/>
         <copy todir="${basedir}/build/phar/doctrine-instantiator">
             <fileset dir="${basedir}/vendor/doctrine/instantiator/src">
+                <include name="**/*.php" />
+            </fileset>
+        </copy>
+
+        <copy file="${basedir}/vendor/symfony/yaml/LICENSE" tofile="${basedir}/build/phar/symfony/LICENSE"/>
+        <copy todir="${basedir}/build/phar/symfony">
+            <fileset dir="${basedir}/vendor/symfony">
+                <include name="**/*.php" />
+                <exclude name="**/Command/*.php" />
+                <exclude name="**/Tests/**" />
+            </fileset>
+        </copy>
+
+        <copy todir="${basedir}/build/phar/dbunit">
+            <fileset dir="${basedir}/vendor/phpunit/dbunit/src">
                 <include name="**/*.php" />
             </fileset>
         </copy>
@@ -295,27 +308,6 @@
                 <include name="**/*.php" />
             </fileset>
         </copy>
-
-        <copy file="${basedir}/vendor/phar-io/manifest/LICENSE" tofile="${basedir}/build/phar/phar-io-manifest/LICENSE"/>
-        <copy todir="${basedir}/build/phar/phar-io-manifest">
-            <fileset dir="${basedir}/vendor/phar-io/manifest/src">
-                <include name="**/*.php" />
-            </fileset>
-        </copy>
-
-        <copy file="${basedir}/vendor/phar-io/version/LICENSE" tofile="${basedir}/build/phar/phar-io-version/LICENSE"/>
-        <copy todir="${basedir}/build/phar/phar-io-version">
-            <fileset dir="${basedir}/vendor/phar-io/version/src">
-                <include name="**/*.php" />
-            </fileset>
-        </copy>
-
-        <copy file="${basedir}/vendor/theseer/tokenizer/LICENSE" tofile="${basedir}/build/phar/theseer-tokenizer/LICENSE"/>
-        <copy todir="${basedir}/build/phar/theseer-tokenizer">
-            <fileset dir="${basedir}/vendor/theseer/tokenizer/src">
-                <include name="**/*.php" />
-            </fileset>
-        </copy>
     </target>
 
     <target name="-phar-build" depends="-phar-determine-version">
@@ -326,12 +318,12 @@
             </fileset>
         </copy>
 
-        <exec executable="${basedir}/build/phar-version.php" outputproperty="_version" failonerror="true">
+        <exec executable="${basedir}/build/phar-version.php" outputproperty="_version">
             <arg value="${version}"/>
             <arg value="${type}"/>
         </exec>
 
-        <exec executable="${basedir}/build/tools/phpab" taskname="phpab" failonerror="true">
+        <exec executable="${basedir}/build/tools/phpab" taskname="phpab">
             <arg value="--all" />
             <arg value="--static" />
             <arg value="--once" />
@@ -348,7 +340,7 @@
         <copy file="${basedir}/build/binary-phar-autoload.php.in" tofile="${basedir}/build/binary-phar-autoload.php"/>
         <replace file="${basedir}/build/binary-phar-autoload.php" token="X.Y.Z" value="${_version}"/>
 
-        <exec executable="${basedir}/build/tools/phpab" taskname="phpab" failonerror="true">
+        <exec executable="${basedir}/build/tools/phpab" taskname="phpab">
             <arg value="--all" />
             <arg value="--nolower" />
             <arg value="--static" />
@@ -369,22 +361,11 @@
     </target>
 
     <target name="-phar-determine-version">
-        <exec executable="${basedir}/build/version.php" outputproperty="version" failonerror="true" />
+        <exec executable="${basedir}/build/version.php" outputproperty="version" />
     </target>
 
-    <target name="generate-project-documentation" depends="-phploc,-checkstyle,-phpunit">
+    <target name="generate-project-documentation" depends="-phploc,-phpcs,-phpmd,-phpunit">
         <exec executable="${basedir}/build/tools/phpdox" dir="${basedir}/build" taskname="phpdox"/>
-    </target>
-
-    <target name="update-tools">
-        <exec executable="phive">
-            <arg value="--no-progress"/>
-            <arg value="update"/>
-        </exec>
-
-        <exec executable="${basedir}/build/tools/composer">
-            <arg value="self-update"/>
-        </exec>
     </target>
 
     <target name="-phploc" depends="prepare">
@@ -397,12 +378,31 @@
         </exec>
     </target>
 
-    <target name="-checkstyle" depends="prepare">
-        <exec executable="${basedir}/build/tools/php-cs-fixer" output="${basedir}/build/logfiles/checkstyle.xml" error="/dev/null" taskname="php-cs-fixer">
-            <arg value="--diff"/>
-            <arg value="--dry-run"/>
-            <arg value="fix"/>
-            <arg value="--format=checkstyle"/>
+    <target name="phpcs">
+        <exec executable="${basedir}/build/tools/phpcs" taskname="phpcs">
+            <arg value="--standard=${basedir}/build/phpcs.xml"/>
+            <arg value="--extensions=php"/>
+            <arg value="--cache"/>
+        </exec>
+    </target>
+
+    <target name="-phpcs" depends="prepare">
+        <exec executable="${basedir}/build/tools/phpcs" output="/dev/null" taskname="phpcs">
+            <arg value="--standard=${basedir}/build/phpcs.xml"/>
+            <arg value="--extensions=php"/>
+            <arg value="--cache"/>
+            <arg value="--report=checkstyle"/>
+            <arg value="--report-file=${basedir}/build/logfiles/checkstyle.xml"/>
+        </exec>
+    </target>
+
+    <target name="-phpmd" depends="prepare">
+        <exec executable="${basedir}/build/tools/phpmd" taskname="phpmd">
+            <arg path="${basedir}/src"/>
+            <arg value="xml"/>
+            <arg path="${basedir}/build/phpmd.xml"/>
+            <arg value="--reportfile"/>
+            <arg path="${basedir}/build/logfiles/pmd.xml"/>
         </exec>
     </target>
 

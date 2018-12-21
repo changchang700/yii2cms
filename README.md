@@ -92,7 +92,7 @@ yii2_cms.sql            数据库文件
 
 
   [1]: http://admin.alilinet.com/
-  [2]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240951316663.png
+  [2]: https://github.com/changchang700/yii2cms/blob/master/uploads/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%82%AE%E7%AE%B1%E9%85%8D%E7%BD%AE.png
   [3]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240953476842.png
   [4]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240958273230.png
   [5]: https://github.com/changchang700/yii2cms/blob/master/uploads/resources/201808240958395263.png

@@ -3216,17 +3216,17 @@
     },
     {
         "name": "yiisoft/yii2-gii",
-        "version": "2.0.7",
-        "version_normalized": "2.0.7.0",
+        "version": "2.0.8",
+        "version_normalized": "2.0.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-gii.git",
-            "reference": "9ec1374d0844f448d2af29c707f77c9f8d1375c8"
+            "reference": "c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/9ec1374d0844f448d2af29c707f77c9f8d1375c8",
-            "reference": "9ec1374d0844f448d2af29c707f77c9f8d1375c8",
+            "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1",
+            "reference": "c02adc552bcf3a0ef6f3694a9dcbf209f4885ab1",
             "shasum": ""
         },
         "require": {
@@ -3235,15 +3235,11 @@
             "yiisoft/yii2": "~2.0.14",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2018-05-02T22:05:25+00:00",
+        "time": "2018-12-08T10:07:49+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.0.x-dev"
-            },
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
             }
         },
         "installation-source": "dist",
@@ -3323,17 +3319,17 @@
     },
     {
         "name": "zoujingli/wechat-developer",
-        "version": "v1.2.7",
-        "version_normalized": "1.2.7.0",
+        "version": "v1.2.9",
+        "version_normalized": "1.2.9.0",
         "source": {
             "type": "git",
             "url": "https://github.com/zoujingli/WeChatDeveloper.git",
-            "reference": "fbf73b5ca44da65c3df93b11b27998476260e227"
+            "reference": "9587b125b844cef0715e480985ec6b56128d8c3c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zoujingli/WeChatDeveloper/zipball/fbf73b5ca44da65c3df93b11b27998476260e227",
-            "reference": "fbf73b5ca44da65c3df93b11b27998476260e227",
+            "url": "https://api.github.com/repos/zoujingli/WeChatDeveloper/zipball/9587b125b844cef0715e480985ec6b56128d8c3c",
+            "reference": "9587b125b844cef0715e480985ec6b56128d8c3c",
             "shasum": ""
         },
         "require": {
@@ -3342,7 +3338,7 @@
             "ext-openssl": "*",
             "php": ">=5.4"
         },
-        "time": "2018-12-05T09:06:38+00:00",
+        "time": "2018-12-14T08:36:16+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

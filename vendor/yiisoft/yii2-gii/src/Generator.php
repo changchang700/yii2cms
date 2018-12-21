@@ -296,9 +296,9 @@ abstract class Generator extends Model
     {
         if (isset($this->templates[$this->template])) {
             return $this->templates[$this->template];
-        } else {
-            throw new InvalidConfigException("Unknown template: {$this->template}");
         }
+
+        throw new InvalidConfigException("Unknown template: {$this->template}");
     }
 
     /**

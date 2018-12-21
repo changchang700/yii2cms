@@ -95,11 +95,11 @@ class CodeFile extends BaseObject
         }
         if (@file_put_contents($this->path, $this->content) === false) {
             return "Unable to write the file '{$this->path}'.";
-        } else {
-            $mask = @umask(0);
-            @chmod($this->path, $module->newFileMode);
-            @umask($mask);
         }
+
+        $mask = @umask(0);
+        @chmod($this->path, $module->newFileMode);
+        @umask($mask);
 
         return true;
     }
@@ -111,9 +111,9 @@ class CodeFile extends BaseObject
     {
         if (strpos($this->path, Yii::$app->basePath) === 0) {
             return substr($this->path, strlen(Yii::$app->basePath) + 1);
-        } else {
-            return $this->path;
         }
+
+        return $this->path;
     }
 
     /**
@@ -123,9 +123,9 @@ class CodeFile extends BaseObject
     {
         if (($pos = strrpos($this->path, '.')) !== false) {
             return substr($this->path, $pos + 1);
-        } else {
-            return 'unknown';
         }
+
+        return 'unknown';
     }
 
     /**
@@ -145,9 +145,9 @@ class CodeFile extends BaseObject
             return highlight_string($this->content, true);
         } elseif (!in_array($type, ['jpg', 'gif', 'png', 'exe'])) {
             return nl2br(Html::encode($this->content));
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     /**
@@ -162,9 +162,9 @@ class CodeFile extends BaseObject
             return false;
         } elseif ($this->operation === self::OP_OVERWRITE) {
             return $this->renderDiff(file($this->path), $this->content);
-        } else {
-            return '';
         }
+
+        return '';
     }
 
     /**

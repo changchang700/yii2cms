@@ -548,9 +548,9 @@ class Generator extends \yii\gii\Generator
         $class = $this->modelClass;
         if (is_subclass_of($class, 'yii\db\ActiveRecord')) {
             return $class::getTableSchema();
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     /**

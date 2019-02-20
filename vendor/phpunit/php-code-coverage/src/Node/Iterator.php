@@ -7,12 +7,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace SebastianBergmann\CodeCoverage\Node;
 
 /**
  * Recursive iterator for node object graphs.
  */
-final class Iterator implements \RecursiveIterator
+class Iterator implements \RecursiveIterator
 {
     /**
      * @var int
@@ -24,6 +25,9 @@ final class Iterator implements \RecursiveIterator
      */
     private $nodes;
 
+    /**
+     * @param Directory $node
+     */
     public function __construct(Directory $node)
     {
         $this->nodes = $node->getChildNodes();
@@ -32,31 +36,37 @@ final class Iterator implements \RecursiveIterator
     /**
      * Rewinds the Iterator to the first element.
      */
-    public function rewind(): void
+    public function rewind()
     {
         $this->position = 0;
     }
 
     /**
      * Checks if there is a current element after calls to rewind() or next().
+     *
+     * @return bool
      */
-    public function valid(): bool
+    public function valid()
     {
-        return $this->position < \count($this->nodes);
+        return $this->position < count($this->nodes);
     }
 
     /**
      * Returns the key of the current element.
+     *
+     * @return int
      */
-    public function key(): int
+    public function key()
     {
         return $this->position;
     }
 
     /**
      * Returns the current element.
+     *
+     * @return \PHPUnit_Framework_Test
      */
-    public function current(): AbstractNode
+    public function current()
     {
         return $this->valid() ? $this->nodes[$this->position] : null;
     }
@@ -64,7 +74,7 @@ final class Iterator implements \RecursiveIterator
     /**
      * Moves forward to next element.
      */
-    public function next(): void
+    public function next()
     {
         $this->position++;
     }
@@ -74,15 +84,19 @@ final class Iterator implements \RecursiveIterator
      *
      * @return Iterator
      */
-    public function getChildren(): self
+    public function getChildren()
     {
-        return new self($this->nodes[$this->position]);
+        return new self(
+            $this->nodes[$this->position]
+        );
     }
 
     /**
      * Checks whether the current element has children.
+     *
+     * @return bool
      */
-    public function hasChildren(): bool
+    public function hasChildren()
     {
         return $this->nodes[$this->position] instanceof Directory;
     }

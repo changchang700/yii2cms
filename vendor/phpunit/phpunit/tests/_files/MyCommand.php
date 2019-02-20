@@ -1,24 +1,15 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\TextUI\Command;
 
-class MyCommand extends Command
+class MyCommand extends PHPUnit_TextUI_Command
 {
     public function __construct()
     {
-        $this->longOptions['my-option=']      = 'myHandler';
+        $this->longOptions['my-option='] = 'myHandler';
         $this->longOptions['my-other-option'] = null;
     }
 
-    public function myHandler($value): void
+    public function myHandler($value)
     {
-        print __METHOD__ . " $value\n";
+        echo __METHOD__ . " $value\n";
     }
 }

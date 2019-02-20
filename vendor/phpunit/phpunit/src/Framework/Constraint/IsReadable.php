@@ -7,32 +7,25 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace PHPUnit\Framework\Constraint;
 
 /**
  * Constraint that checks if the file/dir(name) that it is evaluated for is readable.
  *
  * The file path to check is passed as $other in evaluate().
  */
-class IsReadable extends Constraint
+class PHPUnit_Framework_Constraint_IsReadable extends PHPUnit_Framework_Constraint
 {
-    /**
-     * Returns a string representation of the constraint.
-     */
-    public function toString(): string
-    {
-        return 'is readable';
-    }
-
     /**
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param mixed $other value or object to evaluate
+     * @param mixed $other Value or object to evaluate.
+     *
+     * @return bool
      */
-    protected function matches($other): bool
+    protected function matches($other)
     {
-        return \is_readable($other);
+        return is_readable($other);
     }
 
     /**
@@ -41,13 +34,25 @@ class IsReadable extends Constraint
      * The beginning of failure messages is "Failed asserting that" in most
      * cases. This method should return the second part of that sentence.
      *
-     * @param mixed $other evaluated value or object
+     * @param mixed $other Evaluated value or object.
+     *
+     * @return string
      */
-    protected function failureDescription($other): string
+    protected function failureDescription($other)
     {
-        return \sprintf(
+        return sprintf(
             '"%s" is readable',
             $other
         );
+    }
+
+    /**
+     * Returns a string representation of the constraint.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'is readable';
     }
 }

@@ -141,17 +141,20 @@ class BasicWeChat
      * 以GET获取接口数据并转为数组
      * @param string $url 接口地址
      * @return array
-     * @throws \WeChat\Exceptions\InvalidResponseException
+     * @throws InvalidResponseException
+     * @throws \WeChat\Exceptions\LocalCacheException
      */
     protected function httpGetForJson($url)
     {
         try {
             return Tools::json2arr(Tools::get($url));
         } catch (InvalidResponseException $e) {
-            if (!$this->isTry && in_array($e->getCode(), ['40014', '40001', '41001', '42001'])) {
-                $this->delAccessToken();
-                $this->isTry = true;
-                return call_user_func_array([$this, $this->currentMethod['method']], $this->currentMethod['arguments']);
+            if (isset($this->currentMethod['method']) && empty($this->isTry)) {
+                if (in_array($e->getCode(), ['40014', '40001', '41001', '42001'])) {
+                    $this->delAccessToken();
+                    $this->isTry = true;
+                    return call_user_func_array([$this, $this->currentMethod['method']], $this->currentMethod['arguments']);
+                }
             }
             throw new InvalidResponseException($e->getMessage(), $e->getCode());
         }
@@ -163,7 +166,8 @@ class BasicWeChat
      * @param array $data 请求数据
      * @param bool $buildToJson
      * @return array
-     * @throws \WeChat\Exceptions\InvalidResponseException
+     * @throws InvalidResponseException
+     * @throws \WeChat\Exceptions\LocalCacheException
      */
     protected function httpPostForJson($url, array $data, $buildToJson = true)
     {

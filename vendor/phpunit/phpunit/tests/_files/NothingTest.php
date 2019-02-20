@@ -1,17 +1,7 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\Framework\TestCase;
-
-class NothingTest extends TestCase
+class NothingTest extends PHPUnit_Framework_TestCase
 {
-    public function testNothing(): void
+    public function testNothing()
     {
     }
 }

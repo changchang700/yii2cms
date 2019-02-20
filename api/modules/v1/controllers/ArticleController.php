@@ -13,8 +13,7 @@ class ArticleController extends ActiveController
     public function behaviors() {
         return ArrayHelper::merge (parent::behaviors(), [ 
                 'authenticator' => [ 
-                    'class' => QueryParamAuth::className(),
-					'tokenParam' => 'access_token',
+                    'class' => QueryParamAuth::className()
                 ] 
         ] );
     }

@@ -143,10 +143,10 @@ class GenerateController extends Controller
     {
         if ($action instanceof InlineAction) {
             return parent::getActionHelpSummary($action);
-        } else {
-            /** @var $action GenerateAction */
-            return $action->generator->getName();
         }
+
+        /** @var $action GenerateAction */
+        return $action->generator->getName();
     }
 
     /**
@@ -156,11 +156,12 @@ class GenerateController extends Controller
     {
         if ($action instanceof InlineAction) {
             return parent::getActionHelp($action);
-        } else {
-            /** @var $action GenerateAction */
-            $description = $action->generator->getDescription();
-            return wordwrap(preg_replace('/\s+/', ' ', $description));
         }
+
+        /** @var $action GenerateAction */
+        $description = $action->generator->getDescription();
+
+        return wordwrap(preg_replace('/\s+/', ' ', $description));
     }
 
     /**

@@ -1,12 +1,5 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+
 class ArrayAccessible implements ArrayAccess, IteratorAggregate
 {
     private $array;
@@ -18,7 +11,7 @@ class ArrayAccessible implements ArrayAccess, IteratorAggregate
 
     public function offsetExists($offset)
     {
-        return \array_key_exists($offset, $this->array);
+        return array_key_exists($offset, $this->array);
     }
 
     public function offsetGet($offset)
@@ -26,7 +19,7 @@ class ArrayAccessible implements ArrayAccess, IteratorAggregate
         return $this->array[$offset];
     }
 
-    public function offsetSet($offset, $value): void
+    public function offsetSet($offset, $value)
     {
         if (null === $offset) {
             $this->array[] = $value;
@@ -35,7 +28,7 @@ class ArrayAccessible implements ArrayAccess, IteratorAggregate
         }
     }
 
-    public function offsetUnset($offset): void
+    public function offsetUnset($offset)
     {
         unset($this->array[$offset]);
     }

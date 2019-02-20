@@ -340,6 +340,36 @@ $I->expectException(new MyException("Don't do bad things"), function() {
  * `param` $exception string or \Exception
  * `param` $callback
 
+@deprecated Use expectThrowable instead
+
+
+### expectThrowable
+ 
+Handles and checks throwables (Exceptions/Errors) called inside the callback function.
+Either throwable class name or throwable instance should be provided.
+
+```php
+<?php
+$I->expectThrowable(MyThrowable::class, function() {
+    $this->doSomethingBad();
+});
+
+$I->expectThrowable(new MyException(), function() {
+    $this->doSomethingBad();
+});
+```
+If you want to check message or throwable code, you can pass them with throwable instance:
+```php
+<?php
+// will check that throwable MyError is thrown with "Don't do bad things" message
+$I->expectThrowable(new MyError("Don't do bad things"), function() {
+    $this->doSomethingBad();
+});
+```
+
+ * `param` $throwable string or \Throwable
+ * `param` $callback
+
 
 ### fail
  

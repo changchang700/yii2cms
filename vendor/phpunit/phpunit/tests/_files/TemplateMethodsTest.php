@@ -1,62 +1,51 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\Framework\TestCase;
-
-class TemplateMethodsTest extends TestCase
+class TemplateMethodsTest extends PHPUnit_Framework_TestCase
 {
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
         print __METHOD__ . "\n";
     }
 
-    public static function tearDownAfterClass(): void
+    protected function setUp()
     {
         print __METHOD__ . "\n";
     }
 
-    protected function setUp(): void
+    protected function assertPreConditions()
     {
         print __METHOD__ . "\n";
     }
 
-    protected function tearDown(): void
-    {
-        print __METHOD__ . "\n";
-    }
-
-    public function testOne(): void
+    public function testOne()
     {
         print __METHOD__ . "\n";
         $this->assertTrue(true);
     }
 
-    public function testTwo(): void
+    public function testTwo()
     {
         print __METHOD__ . "\n";
         $this->assertTrue(false);
     }
 
-    protected function assertPreConditions(): void
+    protected function assertPostConditions()
     {
         print __METHOD__ . "\n";
     }
 
-    protected function assertPostConditions(): void
+    protected function tearDown()
     {
         print __METHOD__ . "\n";
     }
 
-    protected function onNotSuccessfulTest(Throwable $t): void
+    public static function tearDownAfterClass()
     {
         print __METHOD__ . "\n";
+    }
 
-        throw $t;
+    protected function onNotSuccessfulTest(Exception $e)
+    {
+        print __METHOD__ . "\n";
+        throw $e;
     }
 }

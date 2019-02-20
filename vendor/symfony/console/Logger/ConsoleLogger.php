@@ -99,8 +99,13 @@ class ConsoleLogger extends AbstractLogger
      * Interpolates context values into the message placeholders.
      *
      * @author PHP Framework Interoperability Group
+     *
+     * @param string $message
+     * @param array  $context
+     *
+     * @return string
      */
-    private function interpolate(string $message, array $context): string
+    private function interpolate($message, array $context)
     {
         if (false === strpos($message, '{')) {
             return $message;

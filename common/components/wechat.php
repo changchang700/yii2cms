@@ -82,7 +82,7 @@ class wechat extends Component {
 		if (class_exists($class)) {
 			return new $class($this->config);
 		}
-		throw new Exception("Class '{$class}' not found");
+		throw new \Exception("Class '{$class}' not found");
     }
 
     /**

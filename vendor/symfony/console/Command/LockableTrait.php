@@ -43,7 +43,7 @@ trait LockableTrait
             throw new LogicException('A lock is already in place.');
         }
 
-        if (SemaphoreStore::isSupported()) {
+        if (SemaphoreStore::isSupported($blocking)) {
             $store = new SemaphoreStore();
         } else {
             $store = new FlockStore();

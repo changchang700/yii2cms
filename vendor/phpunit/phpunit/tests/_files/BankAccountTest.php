@@ -7,16 +7,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use PHPUnit\Framework\TestCase;
 
 /**
  * Tests for the BankAccount class.
+ *
  */
-class BankAccountTest extends TestCase
+class BankAccountTest extends PHPUnit_Framework_TestCase
 {
     protected $ba;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->ba = new BankAccount;
     }
@@ -26,7 +26,7 @@ class BankAccountTest extends TestCase
      * @group balanceIsInitiallyZero
      * @group specification
      */
-    public function testBalanceIsInitiallyZero(): void
+    public function testBalanceIsInitiallyZero()
     {
         /* @Given a fresh bank account */
         $ba = new BankAccount;
@@ -43,7 +43,7 @@ class BankAccountTest extends TestCase
      * @group balanceCannotBecomeNegative
      * @group specification
      */
-    public function testBalanceCannotBecomeNegative(): void
+    public function testBalanceCannotBecomeNegative()
     {
         try {
             $this->ba->withdrawMoney(1);
@@ -61,7 +61,7 @@ class BankAccountTest extends TestCase
      * @group balanceCannotBecomeNegative
      * @group specification
      */
-    public function testBalanceCannotBecomeNegative2(): void
+    public function testBalanceCannotBecomeNegative2()
     {
         try {
             $this->ba->depositMoney(-1);

@@ -9,11 +9,10 @@ class JUnit extends \PHPUnit\Util\Log\JUnit
 {
     protected $strictAttributes = ['file', 'name', 'class'];
 
-    public function startTest(\PHPUnit\Framework\Test $test):void
+    public function startTest(\PHPUnit\Framework\Test $test)
     {
         if (!$test instanceof Reported) {
-            parent::startTest($test);
-            return;
+            return parent::startTest($test);
         }
 
         $this->currentTestCase = $this->document->createElement('testcase');
@@ -28,7 +27,7 @@ class JUnit extends \PHPUnit\Util\Log\JUnit
         }
     }
 
-    public function endTest(\PHPUnit\Framework\Test $test, float $time):void
+    public function endTest(\PHPUnit\Framework\Test $test, $time)
     {
         if ($this->currentTestCase !== null and $test instanceof Test) {
             $numAssertions = $test->getNumAssertions();

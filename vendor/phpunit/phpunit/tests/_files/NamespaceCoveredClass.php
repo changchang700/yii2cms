@@ -1,46 +1,38 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 namespace Foo;
 
 class CoveredParentClass
 {
-    public function publicMethod(): void
+    private function privateMethod()
     {
-        $this->protectedMethod();
     }
 
-    protected function protectedMethod(): void
+    protected function protectedMethod()
     {
         $this->privateMethod();
     }
 
-    private function privateMethod(): void
+    public function publicMethod()
     {
+        $this->protectedMethod();
     }
 }
 
 class CoveredClass extends CoveredParentClass
 {
-    public function publicMethod(): void
+    private function privateMethod()
     {
-        parent::publicMethod();
-        $this->protectedMethod();
     }
 
-    protected function protectedMethod(): void
+    protected function protectedMethod()
     {
         parent::protectedMethod();
         $this->privateMethod();
     }
 
-    private function privateMethod(): void
+    public function publicMethod()
     {
+        parent::publicMethod();
+        $this->protectedMethod();
     }
 }

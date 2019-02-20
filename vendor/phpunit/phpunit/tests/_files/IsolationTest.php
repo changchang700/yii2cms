@@ -1,22 +1,12 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\Framework\TestCase;
-
-class IsolationTest extends TestCase
+class IsolationTest extends PHPUnit_Framework_TestCase
 {
-    public function testIsInIsolationReturnsFalse(): void
+    public function testIsInIsolationReturnsFalse()
     {
         $this->assertFalse($this->isInIsolation());
     }
 
-    public function testIsInIsolationReturnsTrue(): void
+    public function testIsInIsolationReturnsTrue()
     {
         $this->assertTrue($this->isInIsolation());
     }

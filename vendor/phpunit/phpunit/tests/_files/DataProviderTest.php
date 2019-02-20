@@ -1,31 +1,21 @@
 <?php
-/*
- * This file is part of PHPUnit.
- *
- * (c) Sebastian Bergmann <sebastian@phpunit.de>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-use PHPUnit\Framework\TestCase;
-
-class DataProviderTest extends TestCase
+class DataProviderTest extends PHPUnit_Framework_TestCase
 {
-    public static function providerMethod()
-    {
-        return [
-            [0, 0, 0],
-            [0, 1, 1],
-            [1, 1, 3],
-            [1, 0, 1]
-        ];
-    }
-
     /**
      * @dataProvider providerMethod
      */
-    public function testAdd($a, $b, $c): void
+    public function testAdd($a, $b, $c)
     {
         $this->assertEquals($c, $a + $b);
+    }
+
+    public static function providerMethod()
+    {
+        return [
+          [0, 0, 0],
+          [0, 1, 1],
+          [1, 1, 3],
+          [1, 0, 1]
+        ];
     }
 }

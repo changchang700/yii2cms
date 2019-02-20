@@ -10,10 +10,7 @@
 
 namespace SebastianBergmann\CodeCoverage;
 
-use PHPUnit\Framework\TestCase;
-use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
-
-class FilterTest extends TestCase
+class FilterTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Filter
@@ -121,7 +118,7 @@ class FilterTest extends TestCase
      */
     public function testAddingFilesToTheWhitelistWorks()
     {
-        $facade = new FileIteratorFacade;
+        $facade = new \File_Iterator_Facade;
 
         $files = $facade->getFilesAsArray(
             TEST_FILES_PATH,

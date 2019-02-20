@@ -218,13 +218,15 @@ yii.gii = (function ($) {
             initToggleActions();
             initFilterRows();
 
-            // model generator: hide class name inputs when table name input contains *
+            // model generator: hide class name inputs and show psr class name checkbox
+            // when table name input contains *
             $('#model-generator #generator-tablename').change(function () {
                 var show = ($(this).val().indexOf('*') === -1);
                 $('.field-generator-modelclass').toggle(show);
                 if ($('#generator-generatequery').is(':checked')) {
                     $('.field-generator-queryclass').toggle(show);
                 }
+                $('.field-generator-caseinsensitive').toggle(!show);
             }).change();
 
             // model generator: translate table name to model class

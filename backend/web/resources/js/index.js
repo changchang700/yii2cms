@@ -149,6 +149,7 @@ layui.config({
     function lockPage() {
         var backend_user_head_pic = $(".header_user_head_pic").attr("src");
         var backend_user_name = $(".header_user_name").html();
+        alert('请输入admin解锁，默认密码是admin，正式使用可以去掉或者自己后台认证下密码');
         layer.open({
             title: false,
             type: 1,

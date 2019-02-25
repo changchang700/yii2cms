@@ -4,15 +4,15 @@
 	.bs-glyphicons .glyphicon, .bs-glyphicons .fa { margin-top: 5px; margin-bottom: 10px; font-size: 24px;}
 	.bs-glyphicons .glyphicon-class { display: block; text-align: center; white-space: nowrap; overflow: hidden;}
 	.bs-glyphicons li:hover { color: #fff; background-color: #563d7c}
+	.mainf{margin-top:10px;}
 </style>
 <div class="layui-tab">
   <ul class="layui-tab-title">
     <li class="layui-this">Font Awesome图标</li>
     <li>Layui 图标</li>
-    <li>Iconfont 图标</li>
   </ul>
   <div class="layui-tab-content">
-    <div class="layui-tab-item layui-show">
+    <div class="layui-tab-item layui-show mainf">
 		<div class="bs-glyphicons">
 			<ul class="bs-glyphicons-list">
 				<li><span class="fa fa-bluetooth" aria-hidden="true"></span><span class="glyphicon-class">fa fa-bluetooth</span></li>
@@ -843,7 +843,7 @@
 			</ul>
 		</div>
 	</div>
-    <div class="layui-tab-item">
+    <div class="layui-tab-item mainf">
 	<div class="bs-glyphicons">
 	<ul class="bs-glyphicons-list">
 	  <li>
@@ -1709,7 +1709,7 @@
 	</ul>
 	</div>
 	</div>
-    <div class="layui-tab-item">内容3</div>
+
   </div>
 </div>
 
@@ -1719,7 +1719,7 @@ layui.use('element', function(){
 	var $ = layui.jquery;
   var element = layui.element;
   
-  if (document.all) {
+  	if (document.all) {
 		document.onselectstart = function () {
 			return false;
 		};
@@ -1741,6 +1741,7 @@ layui.use('element', function(){
 		}
 	});
 });
+
 <?php $this->endBlock() ?>
 <?php
 $this->registerJs($this->blocks['editor'],\yii\web\View::POS_END);

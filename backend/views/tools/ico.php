@@ -1716,11 +1716,10 @@
 <?php $this->beginBlock('editor') ?>
 //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
 layui.use('element', function(){
+	var $ = layui.jquery;
   var element = layui.element;
-});
-
-$(function () {
-	if (document.all) {
+  
+  if (document.all) {
 		document.onselectstart = function () {
 			return false;
 		};

@@ -96,7 +96,7 @@
 
 .layui-body{overflow:hidden;}
 .layui-tab-content{ height:100%; padding:0; }
-.layui-tab-item{ position: absolute; top: 41px; bottom:0; left: 0; right: 0; padding: 0; margin: 0; -webkit-overflow-scrolling:touch; overflow:auto;}
+.layui-tab-item{ position: absolute; top: 41px; bottom:0; left: 0; right: 0; padding: 0; margin: 0; -webkit-overflow-scrolling:touch; overflow:hidden;}
 .layui-tab-title .layui-this{background-color: #f6f6f6;color: #000;border-bottom-color: red}
 /*.layui-tab-title .layui-this:after {width: 100%;border: none;height: 2px;background-color: #019688}*/
 .layui-tab-title .layui-this:after{ border:none; }
